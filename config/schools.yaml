@@ -1,0 +1,43 @@
+schools:
+  - id: tsinghua
+    name: 清华大学
+    faculties:
+      - 计算机科学与技术系
+    faculty_entry: https://www.cs.tsinghua.edu.cn/szzk/jzgml.htm
+    notes: 教职工名录。
+  - id: pku
+    name: 北京大学
+    faculties:
+      - 计算机学院
+    faculty_entry: https://cs.pku.edu.cn/szdw/jyxl/amz/ALL.htm
+    notes: 教研系列教师页。
+  - id: zju
+    name: 浙江大学
+    faculties:
+      - 计算机科学与技术学院
+    faculty_entry: null
+    notes: Fill official faculty listing URL during adapter implementation.
+  - id: sjtu
+    name: 上海交通大学
+    faculties:
+      - 计算机学院
+    faculty_entry: null
+    notes: Fill official faculty listing URL during adapter implementation.
+  - id: nju
+    name: 南京大学
+    faculties:
+      - 计算机学院
+    faculty_entry: null
+    notes: Fill official faculty listing URL during adapter implementation.
+  - id: fudan
+    name: 复旦大学
+    faculties:
+      - 计算机科学技术学院
+    faculty_entry: null
+    notes: Fill official faculty listing URL during adapter implementation.
+  - id: ruc
+    name: 中国人民大学
+    faculties:
+      - 信息学院
+    faculty_entry: null
+    notes: Confirm whether to split computer science faculty from broader information school.

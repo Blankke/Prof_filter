@@ -1,0 +1,255 @@
+{
+  "generated_at": "2026-03-12T19:24:35.826139+08:00",
+  "note": "Live catalog generated from public faculty pages. Some schools are still pending adapter implementation.",
+  "schools": [
+    {
+      "id": "tsinghua",
+      "name": "清华大学",
+      "faculties": [
+        "计算机科学与技术系"
+      ]
+    },
+    {
+      "id": "pku",
+      "name": "北京大学",
+      "faculties": [
+        "计算机学院"
+      ]
+    },
+    {
+      "id": "zju",
+      "name": "浙江大学",
+      "faculties": [
+        "计算机科学与技术学院"
+      ]
+    },
+    {
+      "id": "sjtu",
+      "name": "上海交通大学",
+      "faculties": [
+        "计算机学院"
+      ]
+    },
+    {
+      "id": "nju",
+      "name": "南京大学",
+      "faculties": [
+        "计算机学院"
+      ]
+    },
+    {
+      "id": "fudan",
+      "name": "复旦大学",
+      "faculties": [
+        "计算机科学技术学院"
+      ]
+    },
+    {
+      "id": "ruc",
+      "name": "中国人民大学",
+      "faculties": [
+        "信息学院"
+      ]
+    }
+  ],
+  "teachers": [
+    {
+      "id": "pku-1602",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "边凯归",
+      "title": "长聘副教授",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://net.pku.edu.cn/~bkg/",
+      "research_areas": [
+        "计算机网络"
+      ],
+      "recent_publications": [],
+      "summary": "无线网络、移动计算、社交网络、网络安全 邮箱：bkg@pku.edu.cn"
+    },
+    {
+      "id": "pku-3090",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "曹东刚",
+      "title": "研究员",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://caodg.github.io/caodg/",
+      "research_areas": [
+        "系统软件"
+      ],
+      "recent_publications": [],
+      "summary": "曹东刚 职称：研究员 研究所：软件研究所 研究领域：系统软件 办公电话：86-10-62757670-11 电子邮件：caodg pku.edu.cn 邮箱：caodg@pku.edu.cn"
+    },
+    {
+      "id": "pku-1603",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "曹永知",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://主要研究方向",
+      "research_areas": [
+        "计算机理论"
+      ],
+      "recent_publications": [],
+      "summary": "形式化方法、隐私性与安全性、人工智能基础 科研/教育经历 2007，博士后，清华大学 2003，博士，北京师范大学 邮箱：caoyz@pku.edu.cn"
+    },
+    {
+      "id": "pku-3081",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "曾炜",
+      "title": "研究员",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://idm.pku.edu.cn/info/1017/1047.htm",
+      "research_areas": [
+        "人工智能",
+        "多媒体"
+      ],
+      "recent_publications": [],
+      "summary": "AI平台与系统、计算机视觉、媒体处理、对象检测、运动对象分割 科研/教育经历 2014-05至今，北京大学，计算机学院，数字媒体研究所，副研究员 2005-06至2014-04，日电(中国)有限公司，NEC中国研究院，高级研究员、研究部长 1993-09 至 2005-02，哈尔滨工业大学，计算机系，计算机应用专业，本、硕、博 研究成果概况 曾炜，博士，2005年毕业于哈尔滨工业大学计算机应用技术专业；博士毕业后加入NEC中国研究院，从事多媒体技术应用系统研究，先后任副研究员、研究员、高级研究员、研究部长。2014年5月，曾炜博士加盟北京大学视频与视觉技术国家工程研究中心，任副研究员。曾炜博士拥有20年相关专业研发背景、9年跨国公司研究经历，长期从事人工智能、智能计算系统、图像处理、计算机视觉、模式识别、多媒体领域的研究工作。曾炜博士先后发表50余篇学术论文，申请超过20多项中外专利，获得10多项国家和省部级科研项目资金资助；担任CVPR2021、CVPR2018、BigMM2020、BigMM2019、BigMM2018、ICPR2020，ICPR2016、ACCV2018等的PC Member或审稿人；担任科技部新一代人工智能启智社区技术委员会委员。 邮箱：weizeng@pku.edu.cn"
+    },
+    {
+      "id": "pku-1609",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "常宝宝",
+      "title": "副教授",
+      "lab": "计算语言学研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://icl.pku.edu.cn/members/chbb/",
+      "research_areas": [
+        "自然语言处理",
+        "句法语义分析"
+      ],
+      "recent_publications": [],
+      "summary": "自然语言处理、句法语义分析 科研/教育经历 1999年，博士，北京大学 邮箱：chbb@pku.edu.cn"
+    },
+    {
+      "id": "pku-3165",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈斌",
+      "title": "教授",
+      "lab": "元宇宙技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/3165.htm",
+      "research_areas": [
+        "图形与多媒体"
+      ],
+      "recent_publications": [],
+      "summary": "主要从事虚拟现实，虚拟地理环境及相关研究，内容涉及基于影像的三维重建，生成式虚拟环境构建等。 主持并参与多项国家自然科学基金、国家重点研发计划项目课题，以及中国科协、北京市科委、腾讯公司等企事业单位委托的横向科研项目。 主要学术任职 - 国际数字地球学会，中国国家委员会委员，虚拟地理环境专业委员会副主任委员； - 中国青少年科技教育工作者协会，人工智能普及专委会委员。 主要教学课程 - 本科生课程：《数据结构与算法》、《计算概论》、《人工智能与计算思维》、《离散数学》、《地球与人类文明》； - 慕课课程：《离散数学概论》、《人工智能与信息社会》、《地球与人类文明》、《数据结构与算法Python版》、《Python语言基础与应用》 邮箱：gischen@pku.edu.cn"
+    },
+    {
+      "id": "pku-2902",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈国璋",
+      "title": "助理教授/研究员",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/2902.htm",
+      "research_areas": [
+        "类脑计算"
+      ],
+      "recent_publications": [],
+      "summary": "陈国璋 职称：助理教授/研究员 研究所：视频与视觉技术研究所 研究领域：类脑计算 电子邮件：guozhang.chen pku.edu.cn 邮箱：guozhang.chen@pku.edu.cn"
+    },
+    {
+      "id": "pku-1610",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈泓婕",
+      "title": "副教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/1610.htm",
+      "research_areas": [
+        "软件工程",
+        "程序设计语言"
+      ],
+      "recent_publications": [],
+      "summary": "陈泓婕 职称：副教授 研究所：软件研究所 研究领域：软件工程、程序设计语言 电子邮件：chenhj sei.pku.edu.cn 邮箱：chenhj@sei.pku.edu.cn"
+    },
+    {
+      "id": "pku-1611",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈立军",
+      "title": "副教授",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/1611.htm",
+      "research_areas": [
+        "数据库与大数据"
+      ],
+      "recent_publications": [],
+      "summary": "陈立军 职称：副教授 研究所：数据科学与工程研究所 研究领域：数据库与大数据 办公电话：86-10-62765825 电子邮件：ljchen pku.edu.cn 邮箱：ljchen@pku.edu.cn"
+    },
+    {
+      "id": "pku-1612",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈薇",
+      "title": "副研究员",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://主要研究方向",
+      "research_areas": [
+        "数据库与数据挖掘",
+        "非结构化数据管理"
+      ],
+      "recent_publications": [],
+      "summary": "陈薇 职称：副研究员 研究所：数据科学与工程研究所 研究领域：数据库与数据挖掘、非结构化数据管理 办公电话：86-10-62756382 电子邮件：pekingchenwei pku.edu.cn 邮箱：pekingchenwei@pku.edu.cn"
+    },
+    {
+      "id": "pku-2863",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈翔",
+      "title": "预聘副教授",
+      "lab": "网络与高能效计算研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://if-lab-pku.github.io/",
+      "research_areas": [
+        "移动智能计算系统"
+      ],
+      "recent_publications": [],
+      "summary": "高能效移动边缘计算系统 高性能分布式与大规模人工智能系统 新型移动人工智能应用 邮箱：xiang.chen@pku.edu.cn"
+    },
+    {
+      "id": "pku-1604",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈向群",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://操作系统，嵌入式软件，普适计算软件工程",
+      "research_areas": [
+        "操作系统",
+        "嵌入式软件",
+        "普适计算软件工程"
+      ],
+      "recent_publications": [],
+      "summary": "陈向群 职称：教授 研究所：软件研究所 研究领域：操作系统，嵌入式软件，普适计算软件工程 办公电话：86-10-6275 7160 电子邮件：cherry sei.pku.edu.cn 邮箱：cherry@sei.pku.edu.cn"
+    }
+  ]
+}

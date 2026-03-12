@@ -1,0 +1,36 @@
+version: 1
+entity: teacher_profile
+fields:
+  - name: school
+    type: string
+    required: true
+  - name: faculty
+    type: string
+    required: true
+  - name: teacher_name
+    type: string
+    required: true
+  - name: title
+    type: string
+    required: false
+  - name: lab
+    type: string
+    required: false
+    empty_state:
+      - not_mentioned
+      - parse_failed
+  - name: research_areas
+    type: array[string]
+    required: true
+  - name: homepage
+    type: string
+    required: false
+  - name: recent_publications
+    type: array[object]
+    required: true
+    children:
+      - title
+      - venue
+      - year
+      - kind
+      - source

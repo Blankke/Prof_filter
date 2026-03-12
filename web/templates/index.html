@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Prof Filter</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">七校计算机教师公开信息聚合</p>
+          <h1>把老师、实验室、研究方向和近期论文放到同一张桌面上</h1>
+          <p class="intro">
+            当前是可运行的 MVP：后端 API、导出能力、七校配置和浏览界面已经打通。页面展示的数据是演示种子，后续会由真实抓取结果替换。
+          </p>
+        </div>
+        <div class="hero-meta">
+          <div class="signal-card">
+            <span>Schools</span>
+            <strong id="stat-schools">{{ overview.stats.school_count }}</strong>
+          </div>
+          <div class="signal-card">
+            <span>Teachers</span>
+            <strong id="stat-teachers">{{ overview.stats.teacher_count }}</strong>
+          </div>
+          <div class="signal-card">
+            <span>Labs</span>
+            <strong id="stat-labs">{{ overview.stats.lab_count }}</strong>
+          </div>
+          <div class="signal-card">
+            <span>Research Areas</span>
+            <strong id="stat-areas">{{ overview.stats.area_count }}</strong>
+          </div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <aside class="control-panel">
+          <section>
+            <label for="school-select">学校</label>
+            <select id="school-select">
+              <option value="">全部学校</option>
+            </select>
+          </section>
+          <section>
+            <label for="query-input">搜索</label>
+            <input id="query-input" type="search" placeholder="姓名、方向、学院、简介" />
+          </section>
+          <section>
+            <label for="area-input">研究方向</label>
+            <input id="area-input" type="search" placeholder="例如：大语言模型 / 系统安全" />
+          </section>
+          <section class="actions">
+            <button id="apply-filters" class="primary">应用筛选</button>
+            <button id="reset-filters" class="secondary">重置</button>
+          </section>
+          <section>
+            <p class="panel-title">导出</p>
+            <div class="export-links">
+              <a href="/api/export/json">JSON</a>
+              <a href="/api/export/csv">CSV</a>
+            </div>
+          </section>
+        </aside>
+
+        <section class="content-panel">
+          <section class="overview-strip">
+            <div>
+              <p class="panel-title">学校概览</p>
+              <div id="school-overview" class="school-overview"></div>
+            </div>
+            <div>
+              <p class="panel-title">研究热区</p>
+              <div id="area-cloud" class="area-cloud"></div>
+            </div>
+          </section>
+
+          <section>
+            <div class="section-head">
+              <div>
+                <p class="panel-title">教师目录</p>
+                <h2 id="results-title">加载中</h2>
+              </div>
+            </div>
+            <div id="teacher-grid" class="teacher-grid"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <template id="teacher-card-template">
+      <article class="teacher-card">
+        <div class="teacher-card-head">
+          <div>
+            <p class="teacher-school"></p>
+            <h3 class="teacher-name"></h3>
+          </div>
+          <span class="teacher-title"></span>
+        </div>
+        <p class="teacher-faculty"></p>
+        <p class="teacher-lab"></p>
+        <p class="teacher-summary"></p>
+        <div class="tag-row teacher-areas"></div>
+        <div class="paper-list"></div>
+        <div class="teacher-links"></div>
+      </article>
+    </template>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+  </html>

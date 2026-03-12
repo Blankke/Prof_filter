@@ -1,0 +1,253 @@
+{
+  "generated_at": "2026-03-12T12:00:00+08:00",
+  "note": "Synthetic seed data for the MVP dashboard. Replace with crawler output during the real collection phase.",
+  "schools": [
+    {"id": "tsinghua", "name": "清华大学", "faculties": ["计算机科学与技术系"]},
+    {"id": "pku", "name": "北京大学", "faculties": ["计算机学院"]},
+    {"id": "zju", "name": "浙江大学", "faculties": ["计算机科学与技术学院"]},
+    {"id": "sjtu", "name": "上海交通大学", "faculties": ["计算机学院"]},
+    {"id": "nju", "name": "南京大学", "faculties": ["计算机学院"]},
+    {"id": "fudan", "name": "复旦大学", "faculties": ["计算机科学技术学院"]},
+    {"id": "ruc", "name": "中国人民大学", "faculties": ["信息学院"]}
+  ],
+  "teachers": [
+    {
+      "id": "tsinghua-demo-1",
+      "school_id": "tsinghua",
+      "school": "清华大学",
+      "faculty": "计算机科学与技术系",
+      "name": "示例教师 A",
+      "title": "教授",
+      "lab": "智能系统与多模态实验室",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/tsinghua-a",
+      "research_areas": ["多模态学习", "机器学习", "智能系统"],
+      "summary": "关注多模态学习系统、推理与部署效率。",
+      "recent_publications": [
+        {"title": "Efficient Multimodal Reasoning Under Sparse Supervision", "venue": "NeurIPS", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/1"},
+        {"title": "Adaptive Cross-Modal Retrieval for Open Worlds", "venue": "TPAMI", "year": 2024, "kind": "journal", "source": "demo-seed", "link": "https://example.org/paper/2"}
+      ]
+    },
+    {
+      "id": "tsinghua-demo-2",
+      "school_id": "tsinghua",
+      "school": "清华大学",
+      "faculty": "计算机科学与技术系",
+      "name": "示例教师 B",
+      "title": "副教授",
+      "lab": "体系结构与高性能计算团队",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/tsinghua-b",
+      "research_areas": ["高性能计算", "计算机体系结构", "系统优化"],
+      "summary": "关注异构计算系统与算力调度。",
+      "recent_publications": [
+        {"title": "Elastic Schedulers for Heterogeneous Clusters", "venue": "SC", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/3"},
+        {"title": "Compiler-Assisted Memory Placement in AI Accelerators", "venue": "MICRO", "year": 2023, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/4"}
+      ]
+    },
+    {
+      "id": "pku-demo-1",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "示例教师 C",
+      "title": "教授",
+      "lab": "数据智能与知识发现实验室",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/pku-c",
+      "research_areas": ["数据挖掘", "知识图谱", "可信 AI"],
+      "summary": "关注知识增强学习与可信数据智能。",
+      "recent_publications": [
+        {"title": "Graph-Grounded Scientific Discovery with Reliable LLMs", "venue": "KDD", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/5"},
+        {"title": "Robust Entity Alignment at Web Scale", "venue": "VLDB", "year": 2023, "kind": "journal", "source": "demo-seed", "link": "https://example.org/paper/6"}
+      ]
+    },
+    {
+      "id": "pku-demo-2",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "示例教师 D",
+      "title": "长聘副教授",
+      "lab": null,
+      "lab_status": "not_mentioned",
+      "homepage": "https://example.org/pku-d",
+      "research_areas": ["程序分析", "软件工程", "代码智能"],
+      "summary": "关注代码理解、缺陷检测与开发者工具。",
+      "recent_publications": [
+        {"title": "Unified Benchmarks for Repository-Level Code Agents", "venue": "ICSE", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/7"},
+        {"title": "Learning Bug Signatures from Weakly Labeled Histories", "venue": "FSE", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/8"}
+      ]
+    },
+    {
+      "id": "zju-demo-1",
+      "school_id": "zju",
+      "school": "浙江大学",
+      "faculty": "计算机科学与技术学院",
+      "name": "示例教师 E",
+      "title": "教授",
+      "lab": "视觉计算与交互实验室",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/zju-e",
+      "research_areas": ["计算机视觉", "三维重建", "AIGC"],
+      "summary": "聚焦视觉生成、场景理解与人机交互。",
+      "recent_publications": [
+        {"title": "Composable 3D Scene Priors for Editable Worlds", "venue": "CVPR", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/9"},
+        {"title": "Learning Geometry-Aware Video Diffusion", "venue": "ICCV", "year": 2023, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/10"}
+      ]
+    },
+    {
+      "id": "zju-demo-2",
+      "school_id": "zju",
+      "school": "浙江大学",
+      "faculty": "计算机科学与技术学院",
+      "name": "示例教师 F",
+      "title": "副教授",
+      "lab": "网络空间安全研究组",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/zju-f",
+      "research_areas": ["系统安全", "隐私计算", "网络测量"],
+      "summary": "关注数据共享场景下的安全计算与协议设计。",
+      "recent_publications": [
+        {"title": "Private Federated Analytics over Dynamic Participants", "venue": "USENIX Security", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/11"},
+        {"title": "Secure Traffic Attribution at Internet Scale", "venue": "NDSS", "year": 2022, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/12"}
+      ]
+    },
+    {
+      "id": "sjtu-demo-1",
+      "school_id": "sjtu",
+      "school": "上海交通大学",
+      "faculty": "计算机学院",
+      "name": "示例教师 G",
+      "title": "教授",
+      "lab": "分布式系统与云基础设施实验室",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/sjtu-g",
+      "research_areas": ["分布式系统", "云计算", "存储系统"],
+      "summary": "聚焦云原生基础设施与高可靠服务。",
+      "recent_publications": [
+        {"title": "Tiered Object Stores for Mixed AI Workloads", "venue": "FAST", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/13"},
+        {"title": "Failure-Aware Scheduling for Stateful Microservices", "venue": "OSDI", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/14"}
+      ]
+    },
+    {
+      "id": "sjtu-demo-2",
+      "school_id": "sjtu",
+      "school": "上海交通大学",
+      "faculty": "计算机学院",
+      "name": "示例教师 H",
+      "title": "副教授",
+      "lab": "具身智能与机器人团队",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/sjtu-h",
+      "research_areas": ["机器人", "强化学习", "具身智能"],
+      "summary": "探索机器人决策、导航与跨模态感知。",
+      "recent_publications": [
+        {"title": "Policy Transfer for Long-Horizon Warehouse Robots", "venue": "RSS", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/15"},
+        {"title": "Embodied Planning with Structured World Models", "venue": "CoRL", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/16"}
+      ]
+    },
+    {
+      "id": "nju-demo-1",
+      "school_id": "nju",
+      "school": "南京大学",
+      "faculty": "计算机学院",
+      "name": "示例教师 I",
+      "title": "教授",
+      "lab": "自然语言处理与社会计算实验室",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/nju-i",
+      "research_areas": ["自然语言处理", "大语言模型", "社会计算"],
+      "summary": "关注 LLM 对齐、多语言理解与社会信号建模。",
+      "recent_publications": [
+        {"title": "Sparse Alignment for Bilingual Foundation Models", "venue": "ACL", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/17"},
+        {"title": "Social Signal Grounding for Debate Agents", "venue": "EMNLP", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/18"}
+      ]
+    },
+    {
+      "id": "nju-demo-2",
+      "school_id": "nju",
+      "school": "南京大学",
+      "faculty": "计算机学院",
+      "name": "示例教师 J",
+      "title": "副教授",
+      "lab": "数据库与数据管理团队",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/nju-j",
+      "research_areas": ["数据库", "数据管理", "数据系统"],
+      "summary": "研究新型硬件场景下的数据系统优化。",
+      "recent_publications": [
+        {"title": "Learned Operators for HTAP Pipelines", "venue": "SIGMOD", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/19"},
+        {"title": "Adaptive Lakehouse Layouts for Enterprise Analytics", "venue": "VLDB", "year": 2023, "kind": "journal", "source": "demo-seed", "link": "https://example.org/paper/20"}
+      ]
+    },
+    {
+      "id": "fudan-demo-1",
+      "school_id": "fudan",
+      "school": "复旦大学",
+      "faculty": "计算机科学技术学院",
+      "name": "示例教师 K",
+      "title": "教授",
+      "lab": "医学影像与智能分析实验室",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/fudan-k",
+      "research_areas": ["医学影像", "计算机视觉", "AI for Science"],
+      "summary": "聚焦医学场景中的视觉理解与诊断辅助。",
+      "recent_publications": [
+        {"title": "Unified Vision Models for Multi-Center Diagnosis", "venue": "MICCAI", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/21"},
+        {"title": "Weakly Supervised Lesion Localization with Large Priors", "venue": "MedIA", "year": 2023, "kind": "journal", "source": "demo-seed", "link": "https://example.org/paper/22"}
+      ]
+    },
+    {
+      "id": "fudan-demo-2",
+      "school_id": "fudan",
+      "school": "复旦大学",
+      "faculty": "计算机科学技术学院",
+      "name": "示例教师 L",
+      "title": "青年研究员",
+      "lab": null,
+      "lab_status": "not_mentioned",
+      "homepage": "https://example.org/fudan-l",
+      "research_areas": ["软件验证", "形式化方法", "系统可靠性"],
+      "summary": "研究软件可靠性与安全关键系统验证。",
+      "recent_publications": [
+        {"title": "Practical Verification for Evolving Cloud Services", "venue": "CAV", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/23"},
+        {"title": "Counterexample-Guided Repair for Stateful APIs", "venue": "ISSTA", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/24"}
+      ]
+    },
+    {
+      "id": "ruc-demo-1",
+      "school_id": "ruc",
+      "school": "中国人民大学",
+      "faculty": "信息学院",
+      "name": "示例教师 M",
+      "title": "教授",
+      "lab": "数据智能与治理研究中心",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/ruc-m",
+      "research_areas": ["数据治理", "知识计算", "社会计算"],
+      "summary": "关注数据治理、知识计算与数字社会。",
+      "recent_publications": [
+        {"title": "Governance-Aware Models for Public Data Systems", "venue": "WWW", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/25"},
+        {"title": "Schema Alignment for Cross-Agency Data Exchange", "venue": "TheWebConf", "year": 2024, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/26"}
+      ]
+    },
+    {
+      "id": "ruc-demo-2",
+      "school_id": "ruc",
+      "school": "中国人民大学",
+      "faculty": "信息学院",
+      "name": "示例教师 N",
+      "title": "副教授",
+      "lab": "计算传播与推荐系统团队",
+      "lab_status": "confirmed",
+      "homepage": "https://example.org/ruc-n",
+      "research_areas": ["推荐系统", "因果推断", "用户建模"],
+      "summary": "关注推荐系统中的因果建模与反馈闭环。",
+      "recent_publications": [
+        {"title": "Counterfactual Ranking with Delayed Rewards", "venue": "RecSys", "year": 2025, "kind": "conference", "source": "demo-seed", "link": "https://example.org/paper/27"},
+        {"title": "Preference Drift Modeling in Long-Term Recommendation", "venue": "TOIS", "year": 2022, "kind": "journal", "source": "demo-seed", "link": "https://example.org/paper/28"}
+      ]
+    }
+  ]
+}
