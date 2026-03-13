@@ -29,6 +29,7 @@ DBLP_AUTHOR_URL = "https://dblp.org/search/author/api"
 DBLP_PID_XML_URL = "https://dblp.org/pid/{pid}.xml"
 YEAR_START = 2024
 YEAR_END = 2026
+TARGET_PUBLICATIONS = 30
 
 SCHOOL_ALIASES: dict[str, list[str]] = {
     "清华大学": ["Tsinghua University"],
@@ -78,41 +79,85 @@ class OpenAlexEnricher:
     def enrich_teacher(self, teacher: Teacher) -> Teacher:
         existing_titles = {publication.title.casefold() for publication in teacher.recent_publications}
         enriched = list(teacher.recent_publications)
-        used_dblp = False
-        used_scholar = False
-        used_scholar_web = False
+        openalex_added = 0
+        dblp_added = 0
+        scholar_added = 0
+        scholar_web_added = 0
 
-        author_id = self.match_author_id(teacher)
+        author_id = self.safe_call(
+            teacher=teacher,
+            source="OpenAlex",
+            operation="match-author",
+            func=lambda: self.match_author_id(teacher),
+            default=None,
+        )
         if author_id:
-            for publication in self.fetch_recent_works(author_id):
-                if publication.title.casefold() in existing_titles:
-                    continue
-                existing_titles.add(publication.title.casefold())
-                enriched.append(publication)
+            openalex_added = self.append_unique_publications(
+                enriched=enriched,
+                existing_titles=existing_titles,
+                publications=self.safe_call(
+                    teacher=teacher,
+                    source="OpenAlex",
+                    operation="fetch-works",
+                    func=lambda: self.fetch_recent_works(author_id),
+                    default=[],
+                ),
+                limit=TARGET_PUBLICATIONS,
+            )
 
-        if len(enriched) == 0:
-            used_dblp = True
-            for publication in self.fetch_recent_works_dblp(teacher):
-                if publication.title.casefold() in existing_titles:
-                    continue
-                existing_titles.add(publication.title.casefold())
-                enriched.append(publication)
+        if len(enriched) < TARGET_PUBLICATIONS:
+            if self.log_progress:
+                print(
+                    f"    [papers-trigger] {teacher.school} {teacher.name} source=DBLP reason=below-target current={len(enriched)} target={TARGET_PUBLICATIONS}"
+                )
+            dblp_added = self.append_unique_publications(
+                enriched=enriched,
+                existing_titles=existing_titles,
+                publications=self.safe_call(
+                    teacher=teacher,
+                    source="DBLP",
+                    operation="fetch-works",
+                    func=lambda: self.fetch_recent_works_dblp(teacher),
+                    default=[],
+                ),
+                limit=TARGET_PUBLICATIONS,
+            )
 
-        if len(enriched) == 0:
-            used_scholar = True
-            for publication in self.fetch_recent_works_scholar(teacher):
-                if publication.title.casefold() in existing_titles:
-                    continue
-                existing_titles.add(publication.title.casefold())
-                enriched.append(publication)
+        if len(enriched) < TARGET_PUBLICATIONS:
+            if self.log_progress:
+                print(
+                    f"    [papers-trigger] {teacher.school} {teacher.name} source=Google Scholar reason=below-target current={len(enriched)} target={TARGET_PUBLICATIONS}"
+                )
+            scholar_added = self.append_unique_publications(
+                enriched=enriched,
+                existing_titles=existing_titles,
+                publications=self.safe_call(
+                    teacher=teacher,
+                    source="Google Scholar",
+                    operation="fetch-works",
+                    func=lambda: self.fetch_recent_works_scholar(teacher),
+                    default=[],
+                ),
+                limit=TARGET_PUBLICATIONS,
+            )
 
-        if len(enriched) == 0:
-            used_scholar_web = True
-            for publication in self.fetch_recent_works_scholar_web(teacher):
-                if publication.title.casefold() in existing_titles:
-                    continue
-                existing_titles.add(publication.title.casefold())
-                enriched.append(publication)
+        if len(enriched) < TARGET_PUBLICATIONS:
+            if self.log_progress:
+                print(
+                    f"    [papers-trigger] {teacher.school} {teacher.name} source=Google Scholar Web reason=below-target current={len(enriched)} target={TARGET_PUBLICATIONS}"
+                )
+            scholar_web_added = self.append_unique_publications(
+                enriched=enriched,
+                existing_titles=existing_titles,
+                publications=self.safe_call(
+                    teacher=teacher,
+                    source="Google Scholar Web",
+                    operation="fetch-works",
+                    func=lambda: self.fetch_recent_works_scholar_web(teacher),
+                    default=[],
+                ),
+                limit=TARGET_PUBLICATIONS,
+            )
 
         teacher.recent_publications = sorted(
             enriched,
@@ -121,16 +166,57 @@ class OpenAlexEnricher:
         )
         if self.log_progress:
             print(f"    [papers] {teacher.school} {teacher.name} publications={len(teacher.recent_publications)}")
-            if used_dblp:
+            openalex_count = sum(1 for publication in teacher.recent_publications if publication.source == "OpenAlex")
+            print(
+                f"    [papers-openalex] {teacher.school} {teacher.name} added={openalex_added} openalex_publications={openalex_count}"
+            )
+            if dblp_added > 0:
                 dblp_count = sum(1 for publication in teacher.recent_publications if publication.source == "DBLP")
-                print(f"    [papers-dblp] {teacher.school} {teacher.name} dblp_publications={dblp_count}")
-            if used_scholar:
+                print(
+                    f"    [papers-dblp] {teacher.school} {teacher.name} added={dblp_added} dblp_publications={dblp_count}"
+                )
+            if scholar_added > 0:
                 scholar_count = sum(1 for publication in teacher.recent_publications if publication.source == "Google Scholar")
-                print(f"    [papers-scholar] {teacher.school} {teacher.name} scholar_publications={scholar_count}")
-            if used_scholar_web:
-                scholar_web_count = sum(1 for publication in teacher.recent_publications if publication.source == "Google Scholar Web")
-                print(f"    [papers-scholar-web] {teacher.school} {teacher.name} scholar_web_publications={scholar_web_count}")
+                print(
+                    f"    [papers-scholar] {teacher.school} {teacher.name} added={scholar_added} scholar_publications={scholar_count}"
+                )
+            if scholar_web_added > 0:
+                scholar_web_count = sum(
+                    1 for publication in teacher.recent_publications if publication.source == "Google Scholar Web"
+                )
+                print(
+                    f"    [papers-scholar-web] {teacher.school} {teacher.name} added={scholar_web_added} scholar_web_publications={scholar_web_count}"
+                )
         return teacher
+
+    @staticmethod
+    def append_unique_publications(
+        enriched: list[Publication],
+        existing_titles: set[str],
+        publications: list[Publication],
+        limit: int,
+    ) -> int:
+        added = 0
+        for publication in publications:
+            if len(enriched) >= limit:
+                break
+            title_key = publication.title.casefold()
+            if title_key in existing_titles:
+                continue
+            existing_titles.add(title_key)
+            enriched.append(publication)
+            added += 1
+        return added
+
+    def safe_call(self, teacher: Teacher, source: str, operation: str, func, default):
+        try:
+            return func()
+        except Exception as exc:
+            if self.log_progress:
+                print(
+                    f"    [papers-source-failed] {teacher.school} {teacher.name} source={source} operation={operation} reason={exc.__class__.__name__}"
+                )
+            return default
 
     def fetch_recent_works_scholar(self, teacher: Teacher) -> list[Publication]:
         if scholarly is None:

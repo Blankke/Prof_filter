@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+from contextlib import contextmanager
 from datetime import datetime
 import json
 from pathlib import Path
+import signal
 from time import perf_counter
 
 import yaml
@@ -16,6 +18,35 @@ from crawler.spiders.registry import SPIDER_REGISTRY
 MAX_PUBLICATIONS_PER_TEACHER = 30
 PUBLICATION_YEAR_START = 2024
 PUBLICATION_YEAR_END = 2026
+DEFAULT_TEACHER_ENRICH_TIMEOUT_SECONDS = 45.0
+
+
+class TeacherEnrichTimeoutError(TimeoutError):
+    pass
+
+
+@contextmanager
+def teacher_enrich_timeout(seconds: float | None):
+    if seconds is None or seconds <= 0 or not hasattr(signal, "SIGALRM"):
+        yield
+        return
+
+    previous_handler = signal.getsignal(signal.SIGALRM)
+    previous_timer = signal.setitimer(signal.ITIMER_REAL, 0)
+
+    def handle_alarm(signum, frame):
+        raise TeacherEnrichTimeoutError(f"teacher enrichment timed out after {seconds:.1f}s")
+
+    signal.signal(signal.SIGALRM, handle_alarm)
+    signal.setitimer(signal.ITIMER_REAL, seconds)
+    try:
+        yield
+    finally:
+        signal.setitimer(signal.ITIMER_REAL, 0)
+        signal.signal(signal.SIGALRM, previous_handler)
+        remaining, interval = previous_timer
+        if remaining > 0:
+            signal.setitimer(signal.ITIMER_REAL, remaining, interval)
 
 
 def render_progress(label: str, current: int, total: int, width: int = 24) -> str:
@@ -78,6 +109,7 @@ def build_catalog(
     cache_dir: Path | None = None,
     refresh: bool = False,
     log_progress: bool = True,
+    teacher_timeout_seconds: float = DEFAULT_TEACHER_ENRICH_TIMEOUT_SECONDS,
 ) -> Catalog:
     school_entries = load_school_config(config_path)
     schools: list[School] = []
@@ -142,11 +174,18 @@ def build_catalog(
                     print(render_progress("teachers", teacher_index, len(crawled_teachers)) + f" -> {teacher.name}")
                     print(f"  [teacher {teacher_index}/{len(crawled_teachers)}] enrich-start {teacher.name}")
                 try:
-                    teacher = enricher.enrich_teacher(teacher)
+                    with teacher_enrich_timeout(teacher_timeout_seconds):
+                        teacher = enricher.enrich_teacher(teacher)
                     teacher = normalize_teacher_publications(teacher)
                     if log_progress:
                         print(
                             f"  [teacher {teacher_index}/{len(crawled_teachers)}] enrich-done {teacher.name} publications={len(teacher.recent_publications)}"
+                        )
+                except TeacherEnrichTimeoutError:
+                    teacher = normalize_teacher_publications(teacher)
+                    if log_progress:
+                        print(
+                            f"  [teacher {teacher_index}/{len(crawled_teachers)}] enrich-timeout {teacher.name} exceeded={teacher_timeout_seconds:.1f}s action=skip"
                         )
                 except Exception as exc:
                     if log_progress:

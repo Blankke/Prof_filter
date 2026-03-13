@@ -36,6 +36,7 @@ def main() -> None:
     parser.add_argument("--cache-dir", default=str(BASE_DIR / "data" / "cache"), help="Cache directory for school snapshots and OpenAlex responses")
     parser.add_argument("--refresh", action="store_true", help="Ignore school cache and rebuild data from source")
     parser.add_argument("--quiet", action="store_true", help="Disable progress logs during build-catalog")
+    parser.add_argument("--teacher-timeout", type=float, default=45.0, help="Per-teacher enrichment timeout in seconds; <=0 disables the timeout guard")
     args = parser.parse_args()
 
     seeds = load_seeds()
@@ -56,6 +57,7 @@ def main() -> None:
             cache_dir=Path(args.cache_dir),
             refresh=args.refresh,
             log_progress=not args.quiet,
+            teacher_timeout_seconds=args.teacher_timeout,
         )
         output_path = Path(args.output)
         write_catalog(catalog, output_path)
