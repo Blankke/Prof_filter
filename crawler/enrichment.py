@@ -6,13 +6,19 @@ import json
 from pathlib import Path
 import re
 import time
-from urllib.parse import unquote
+from urllib.parse import quote_plus, unquote
 import xml.etree.ElementTree as ET
 
+from bs4 import BeautifulSoup
 import requests
 from requests.adapters import HTTPAdapter
 from pypinyin import lazy_pinyin
 from urllib3.util.retry import Retry
+
+try:
+    from scholarly import scholarly
+except Exception:
+    scholarly = None
 
 from app.models import Publication, Teacher
 
@@ -67,11 +73,14 @@ class OpenAlexEnricher:
             (self.cache_dir / "works").mkdir(parents=True, exist_ok=True)
             (self.cache_dir / "dblp_authors").mkdir(parents=True, exist_ok=True)
             (self.cache_dir / "dblp_pid").mkdir(parents=True, exist_ok=True)
+            (self.cache_dir / "scholar_web").mkdir(parents=True, exist_ok=True)
 
     def enrich_teacher(self, teacher: Teacher) -> Teacher:
         existing_titles = {publication.title.casefold() for publication in teacher.recent_publications}
         enriched = list(teacher.recent_publications)
         used_dblp = False
+        used_scholar = False
+        used_scholar_web = False
 
         author_id = self.match_author_id(teacher)
         if author_id:
@@ -89,6 +98,22 @@ class OpenAlexEnricher:
                 existing_titles.add(publication.title.casefold())
                 enriched.append(publication)
 
+        if len(enriched) == 0:
+            used_scholar = True
+            for publication in self.fetch_recent_works_scholar(teacher):
+                if publication.title.casefold() in existing_titles:
+                    continue
+                existing_titles.add(publication.title.casefold())
+                enriched.append(publication)
+
+        if len(enriched) == 0:
+            used_scholar_web = True
+            for publication in self.fetch_recent_works_scholar_web(teacher):
+                if publication.title.casefold() in existing_titles:
+                    continue
+                existing_titles.add(publication.title.casefold())
+                enriched.append(publication)
+
         teacher.recent_publications = sorted(
             enriched,
             key=lambda publication: (publication.year, publication.title),
@@ -99,10 +124,159 @@ class OpenAlexEnricher:
             if used_dblp:
                 dblp_count = sum(1 for publication in teacher.recent_publications if publication.source == "DBLP")
                 print(f"    [papers-dblp] {teacher.school} {teacher.name} dblp_publications={dblp_count}")
+            if used_scholar:
+                scholar_count = sum(1 for publication in teacher.recent_publications if publication.source == "Google Scholar")
+                print(f"    [papers-scholar] {teacher.school} {teacher.name} scholar_publications={scholar_count}")
+            if used_scholar_web:
+                scholar_web_count = sum(1 for publication in teacher.recent_publications if publication.source == "Google Scholar Web")
+                print(f"    [papers-scholar-web] {teacher.school} {teacher.name} scholar_web_publications={scholar_web_count}")
         return teacher
 
+    def fetch_recent_works_scholar(self, teacher: Teacher) -> list[Publication]:
+        if scholarly is None:
+            return []
+
+        canonical_name = self.canonicalize_teacher_name(teacher.name, teacher.school)
+        school_aliases = SCHOOL_ALIASES.get(teacher.school, [])
+        queries = [
+            f"{canonical_name} {teacher.school}",
+            canonical_name,
+            *self.build_author_queries(canonical_name),
+        ]
+
+        best_author: dict[str, object] | None = None
+        best_score = 0.0
+        for query in dict.fromkeys(queries):
+            try:
+                candidates = scholarly.search_author(query)
+            except Exception:
+                continue
+
+            for _ in range(5):
+                try:
+                    candidate = next(candidates)
+                except StopIteration:
+                    break
+                except Exception:
+                    break
+
+                candidate_name = str(candidate.get("name") or "")
+                affiliation = str(candidate.get("affiliation") or "")
+                alias_score = 1.0 if any(alias.casefold() in affiliation.casefold() for alias in school_aliases) else 0.0
+                cn_name_score = 1.0 if teacher.name and teacher.name in candidate_name else 0.0
+                en_name_score = max(
+                    SequenceMatcher(None, self.normalize_name(candidate_name), self.normalize_name(query)).ratio(),
+                    SequenceMatcher(None, self.normalize_name(candidate_name), self.normalize_name(canonical_name)).ratio(),
+                )
+                score = alias_score * 2 + cn_name_score + en_name_score
+                if score > best_score:
+                    best_score = score
+                    best_author = candidate
+
+        if best_author is None or best_score < 1.5:
+            return []
+
+        try:
+            filled_author = scholarly.fill(best_author, sections=["publications"])
+        except Exception:
+            return []
+
+        publications: list[Publication] = []
+        raw_pubs = filled_author.get("publications") or []
+        for raw in raw_pubs[:80]:
+            bib = raw.get("bib") or {}
+            year_text = str(bib.get("pub_year") or bib.get("year") or "").strip()
+            try:
+                year = int(year_text)
+            except ValueError:
+                continue
+            if not (YEAR_START <= year <= YEAR_END):
+                continue
+
+            title = self.clean_publication_title(str(bib.get("title") or ""))
+            if not title:
+                continue
+
+            venue = self.clean_text(str(bib.get("journal") or bib.get("venue") or bib.get("publisher") or "Google Scholar"))
+            venue_cf = venue.casefold()
+            kind = "conference" if any(token in venue_cf for token in ["proc", "conf", "symposium", "workshop"]) else "journal"
+            link = raw.get("pub_url") or raw.get("author_pub_id")
+
+            publications.append(
+                Publication(
+                    title=title,
+                    venue=venue,
+                    year=year,
+                    kind=kind,
+                    source="Google Scholar",
+                    link=str(link) if link else None,
+                )
+            )
+        return publications
+
+    def fetch_recent_works_scholar_web(self, teacher: Teacher) -> list[Publication]:
+        canonical_name = self.canonicalize_teacher_name(teacher.name, teacher.school)
+        queries = [
+            f"{canonical_name} {teacher.school}",
+            canonical_name,
+            *self.build_author_queries(canonical_name),
+        ]
+
+        publications: list[Publication] = []
+        seen_titles: set[str] = set()
+        for query in dict.fromkeys([q.strip() for q in queries if q.strip()]):
+            url = f"https://scholar.google.com/scholar?hl=en&q={quote_plus(query)}"
+            html = self.cached_get_text(
+                url,
+                params=None,
+                cache_bucket="scholar_web",
+                cache_key=f"{teacher.school}:{canonical_name}:{query}",
+            )
+            if not html:
+                continue
+
+            soup = BeautifulSoup(html, "html.parser")
+            for item in soup.select("div.gs_ri"):
+                title_node = item.select_one("h3.gs_rt")
+                if title_node is None:
+                    continue
+                title = self.clean_publication_title(title_node.get_text(" ", strip=True))
+                if not title:
+                    continue
+
+                year = self.extract_year(item.select_one("div.gs_a").get_text(" ", strip=True) if item.select_one("div.gs_a") else "")
+                if year is None or not (YEAR_START <= year <= YEAR_END):
+                    continue
+
+                title_key = title.casefold()
+                if title_key in seen_titles:
+                    continue
+                seen_titles.add(title_key)
+
+                meta_text = item.select_one("div.gs_a").get_text(" ", strip=True) if item.select_one("div.gs_a") else ""
+                venue = self.clean_text(meta_text) or "Google Scholar"
+                venue_cf = venue.casefold()
+                kind = "conference" if any(token in venue_cf for token in ["proc", "conf", "symposium", "workshop"]) else "journal"
+                link_node = title_node.select_one("a")
+                link = link_node.get("href") if link_node else None
+
+                publications.append(
+                    Publication(
+                        title=title,
+                        venue=venue,
+                        year=year,
+                        kind=kind,
+                        source="Google Scholar Web",
+                        link=link,
+                    )
+                )
+                if len(publications) >= 30:
+                    return publications
+        return publications
+
     def match_author_id(self, teacher: Teacher) -> str | None:
-        queries = self.build_author_queries(teacher.name)
+        canonical_name = self.canonicalize_teacher_name(teacher.name, teacher.school)
+        queries = self.build_author_queries(canonical_name)
         aliases = SCHOOL_ALIASES.get(teacher.school, [])
         best_id: str | None = None
         best_score = 0.0
@@ -122,7 +296,7 @@ class OpenAlexEnricher:
                 institution_score = 1.0 if any(alias in institution_names for alias in aliases) else 0.0
                 name_score = max(
                     SequenceMatcher(None, self.normalize_name(display_name), self.normalize_name(query)).ratio(),
-                    SequenceMatcher(None, self.normalize_name(display_name), self.normalize_name(teacher.name)).ratio(),
+                    SequenceMatcher(None, self.normalize_name(display_name), self.normalize_name(canonical_name)).ratio(),
                 )
                 score = institution_score * 2 + name_score + min((item.get("works_count") or 0) / 500, 0.5)
                 if score > best_score:
@@ -132,7 +306,8 @@ class OpenAlexEnricher:
         return best_id if best_score >= 2.2 else None
 
     def match_dblp_pid(self, teacher: Teacher) -> str | None:
-        queries = [teacher.name, *self.build_author_queries(teacher.name)]
+        canonical_name = self.canonicalize_teacher_name(teacher.name, teacher.school)
+        queries = [canonical_name, *self.build_author_queries(canonical_name)]
         best_pid: str | None = None
         best_score = 0.0
 
@@ -156,7 +331,7 @@ class OpenAlexEnricher:
                     continue
                 pid = unquote(match.group(1))
                 score = max(
-                    SequenceMatcher(None, self.normalize_name(author_name), self.normalize_name(teacher.name)).ratio(),
+                    SequenceMatcher(None, self.normalize_name(author_name), self.normalize_name(canonical_name)).ratio(),
                     SequenceMatcher(None, self.normalize_name(author_name), self.normalize_name(query)).ratio(),
                 )
                 if score > best_score:
@@ -307,6 +482,27 @@ class OpenAlexEnricher:
         return re.sub(r"[^a-z]", "", text.casefold())
 
     @staticmethod
+    def canonicalize_teacher_name(name: str, school: str) -> str:
+        text = (name or "").strip()
+        if not text:
+            return text
+        text = re.split(r"[-–—|｜,，(（]", text, maxsplit=1)[0].strip()
+        for token in [school, *SCHOOL_ALIASES.get(school, [])]:
+            if token:
+                text = text.replace(token, "").strip()
+        return re.sub(r"\s+", " ", text).strip()
+
+    @staticmethod
+    def extract_year(text: str) -> int | None:
+        match = re.search(r"(19|20)\d{2}", text or "")
+        if not match:
+            return None
+        try:
+            return int(match.group(0))
+        except ValueError:
+            return None
+
+    @staticmethod
     def element_text(node: ET.Element | None) -> str:
         if node is None:
             return ""
@@ -314,4 +510,9 @@ class OpenAlexEnricher:
 
     @staticmethod
     def clean_publication_title(text: str) -> str:
-        return re.sub(r"\s+", " ", text).strip(" .")
+        cleaned = re.sub(r"\[[^\]]+\]", "", text)
+        return re.sub(r"\s+", " ", cleaned).strip(" .")
+
+    @staticmethod
+    def clean_text(text: str) -> str:
+        return re.sub(r"\s+", " ", (text or "")).strip()

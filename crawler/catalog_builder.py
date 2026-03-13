@@ -18,6 +18,15 @@ PUBLICATION_YEAR_START = 2024
 PUBLICATION_YEAR_END = 2026
 
 
+def render_progress(label: str, current: int, total: int, width: int = 24) -> str:
+    safe_total = max(total, 1)
+    clamped = min(max(current, 0), safe_total)
+    ratio = clamped / safe_total
+    filled = int(width * ratio)
+    bar = "#" * filled + "-" * (width - filled)
+    return f"{label} [{bar}] {clamped}/{safe_total}"
+
+
 def normalize_teacher_publications(teacher: Teacher) -> Teacher:
     teacher.recent_publications = [
         publication
@@ -85,6 +94,8 @@ def build_catalog(
         if school_filter and school_id != school_filter:
             continue
         school_index += 1
+        if log_progress:
+            print(render_progress("schools", school_index, school_total) + f" -> {entry['name']}")
 
         schools.append(
             School(
@@ -128,6 +139,7 @@ def build_catalog(
 
             for teacher_index, teacher in enumerate(crawled_teachers, start=1):
                 if log_progress:
+                    print(render_progress("teachers", teacher_index, len(crawled_teachers)) + f" -> {teacher.name}")
                     print(f"  [teacher {teacher_index}/{len(crawled_teachers)}] enrich-start {teacher.name}")
                 try:
                     teacher = enricher.enrich_teacher(teacher)
