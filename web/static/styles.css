@@ -273,8 +273,10 @@ button {
 
 .teacher-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-auto-flow: dense;
   gap: 16px;
+  align-items: start;
 }
 
 .teacher-card {
@@ -284,6 +286,20 @@ button {
   border-radius: 22px;
   border: 1px solid var(--line);
   background: var(--panel-strong);
+  grid-column: span 4;
+  height: fit-content;
+}
+
+.teacher-card.card-size-small {
+  grid-column: span 4;
+}
+
+.teacher-card.card-size-medium {
+  grid-column: span 6;
+}
+
+.teacher-card.card-size-large {
+  grid-column: span 8;
 }
 
 .teacher-card-head {
@@ -310,9 +326,87 @@ button {
   line-height: 1.6;
 }
 
+.teacher-summary.is-collapsible:not(.is-expanded) {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.summary-toggle {
+  width: auto;
+  justify-self: start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(16, 33, 27, 0.04);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.summary-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.teacher-card-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 1fr);
+  gap: 14px;
+}
+
+.teacher-main-col,
+.teacher-side-col {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.teacher-side-col {
+  grid-template-rows: auto auto 1fr;
+  padding-left: 12px;
+  border-left: 1px solid rgba(16, 33, 27, 0.1);
+}
+
+.teacher-links {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px dashed rgba(16, 33, 27, 0.12);
+  display: flex;
+  justify-content: flex-end;
+}
+
 .paper-list {
   display: grid;
   gap: 8px;
+}
+
+.paper-item.is-hidden {
+  display: none;
+}
+
+.paper-list.is-expanded .paper-item.is-hidden {
+  display: block;
+}
+
+.paper-toggle {
+  width: auto;
+  justify-self: start;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(16, 33, 27, 0.04);
+  color: var(--ink-soft);
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.paper-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
 }
 
 .paper-item {
@@ -331,6 +425,276 @@ button {
   text-decoration: none;
 }
 
+/* ── Title filter chips ──────────────────────── */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  width: auto;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.chip:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.chip.active {
+  background: var(--bg-deep);
+  border-color: var(--bg-deep);
+  color: #fffaf2;
+}
+
+/* ── Section head with controls ─────────────── */
+.section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.section-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-controls select {
+  width: auto;
+  padding: 8px 12px;
+  font-size: 0.84rem;
+  border-radius: 12px;
+}
+
+/* ── View toggle buttons ─────────────────────── */
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.view-btn {
+  width: auto;
+  padding: 7px 12px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.view-btn + .view-btn {
+  border-left: 1px solid var(--line);
+}
+
+.view-btn.active {
+  background: var(--bg-deep);
+  color: #fffaf2;
+}
+
+/* ── Area cloud clickable ────────────────────── */
+.area-chip {
+  cursor: pointer;
+  border: 1px solid var(--line);
+  font: inherit;
+  font-size: 0.84rem;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.area-chip:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Tag (research area in card) as button ───── */
+.tag {
+  cursor: pointer;
+  border: 1px solid var(--line);
+  font: inherit;
+  font-size: 0.84rem;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.tag:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Compact list view ───────────────────────── */
+.teacher-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.teacher-row {
+  display: grid;
+  grid-template-columns: 7em 6em 7em 1fr 4em;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-strong);
+  font-size: 0.9rem;
+  transition: background 0.12s;
+}
+
+.teacher-row:last-child {
+  border-bottom: none;
+}
+
+.teacher-row:hover {
+  background: rgba(180, 91, 42, 0.06);
+}
+
+.row-school {
+  color: var(--ink-soft);
+  font-size: 0.8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.row-name {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.row-title {
+  display: inline-flex;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: rgba(37, 98, 77, 0.1);
+  color: var(--success);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.row-areas {
+  color: var(--ink-soft);
+  font-size: 0.84rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row-area-btn {
+  width: auto;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.row-area-btn:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.row-sep {
+  color: var(--ink-soft);
+  opacity: 0.5;
+}
+
+.row-link {
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  text-align: right;
+}
+
+.row-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Pagination ──────────────────────────────── */
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  width: auto;
+  min-width: 36px;
+  padding: 7px 11px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  font: inherit;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.page-btn.active {
+  background: var(--bg-deep);
+  border-color: var(--bg-deep);
+  color: #fffaf2;
+}
+
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.page-dots {
+  padding: 0 4px;
+  color: var(--ink-soft);
+}
+
+.page-info {
+  margin-left: 8px;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+/* ── Paper item link ─────────────────────────── */
+.paper-item a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.paper-item a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
 @media (max-width: 1080px) {
   .hero,
   .layout,
@@ -340,6 +704,34 @@ button {
 
   .control-panel {
     position: static;
+  }
+
+  .teacher-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .teacher-card,
+  .teacher-card.card-size-small,
+  .teacher-card.card-size-medium,
+  .teacher-card.card-size-large {
+    grid-column: span 6;
+  }
+
+  .teacher-card-body {
+    grid-template-columns: 1fr;
+  }
+
+  .teacher-side-col {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(16, 33, 27, 0.1);
+    padding-top: 10px;
+  }
+
+  .row-areas {
+    grid-column: 1 / -1;
+    white-space: normal;
   }
 }
 
@@ -357,5 +749,12 @@ button {
 
   .metric-row {
     grid-template-columns: 1fr;
+  }
+
+  .teacher-card,
+  .teacher-card.card-size-small,
+  .teacher-card.card-size-medium,
+  .teacher-card.card-size-large {
+    grid-column: 1 / -1;
   }
 }

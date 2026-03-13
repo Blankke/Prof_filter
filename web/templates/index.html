@@ -52,6 +52,16 @@
             <label for="area-input">研究方向</label>
             <input id="area-input" type="search" placeholder="例如：大语言模型 / 系统安全" />
           </section>
+          <section>
+            <label>职称</label>
+            <div id="title-chips" class="chip-group">
+              <button class="chip active" data-title="">全部</button>
+              <button class="chip" data-title="教授">教授</button>
+              <button class="chip" data-title="副教授">副教授</button>
+              <button class="chip" data-title="助理教授">助理教授</button>
+              <button class="chip" data-title="讲师">讲师</button>
+            </div>
+          </section>
           <section class="actions">
             <button id="apply-filters" class="primary">应用筛选</button>
             <button id="reset-filters" class="secondary">重置</button>
@@ -83,8 +93,19 @@
                 <p class="panel-title">教师目录</p>
                 <h2 id="results-title">加载中</h2>
               </div>
+              <div class="section-controls">
+                <select id="sort-select">
+                  <option value="name">按姓名排序</option>
+                  <option value="title">按职称排序</option>
+                </select>
+                <div class="view-toggle">
+                  <button id="view-cards" class="view-btn active" title="卡片视图">⊞</button>
+                  <button id="view-compact" class="view-btn" title="紧凑视图">☰</button>
+                </div>
+              </div>
             </div>
             <div id="teacher-grid" class="teacher-grid"></div>
+            <div id="pagination" class="pagination"></div>
           </section>
         </section>
       </main>
@@ -99,12 +120,20 @@
           </div>
           <span class="teacher-title"></span>
         </div>
-        <p class="teacher-faculty"></p>
-        <p class="teacher-lab"></p>
-        <p class="teacher-summary"></p>
-        <div class="tag-row teacher-areas"></div>
-        <div class="paper-list"></div>
-        <div class="teacher-links"></div>
+
+        <div class="teacher-card-body">
+          <div class="teacher-main-col">
+            <p class="teacher-faculty"></p>
+            <p class="teacher-summary"></p>
+            <div class="tag-row teacher-areas"></div>
+          </div>
+
+          <aside class="teacher-side-col">
+            <p class="teacher-lab"></p>
+            <div class="paper-list"></div>
+            <div class="teacher-links"></div>
+          </aside>
+        </div>
       </article>
     </template>
 
