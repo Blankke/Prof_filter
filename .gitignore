@@ -4,3 +4,8 @@ __pycache__/
 *.pyc
 exports/*.json
 exports/*.csv
+
+# Generated runtime artifacts
+data/cache/
+data/pipeline_full.log
+data/live_catalog.json

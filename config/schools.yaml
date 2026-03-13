@@ -21,23 +21,23 @@ schools:
     name: 上海交通大学
     faculties:
       - 计算机学院
-    faculty_entry: null
-    notes: Fill official faculty listing URL during adapter implementation.
+    faculty_entry: https://www.cs.sjtu.edu.cn/jiaoshiml.html
+    notes: 教师名录，实际数据通过学院 AJAX 接口返回。
   - id: nju
     name: 南京大学
     faculties:
       - 计算机学院
-    faculty_entry: null
-    notes: Fill official faculty listing URL during adapter implementation.
+    faculty_entry: https://cs.nju.edu.cn/1651/list.htm
+    notes: 师资队伍入口，细分页面包括教授、副教授、准长聘等。
   - id: fudan
     name: 复旦大学
     faculties:
-      - 计算机科学技术学院
-    faculty_entry: null
-    notes: Fill official faculty listing URL during adapter implementation.
+      - 计算与智能创新学院
+    faculty_entry: https://cs.fudan.edu.cn/53161/list.htm
+    notes: 教职工名录页通过 WP3 generalQuery teacherHome 接口返回教师列表，详情页为个人页面。
   - id: ruc
     name: 中国人民大学
     faculties:
       - 信息学院
-    faculty_entry: null
-    notes: Confirm whether to split computer science faculty from broader information school.
+    faculty_entry: http://info.ruc.edu.cn/jsky/szdw/ajxjgcx/bx/bx1/index.htm
+    notes: 师资队伍（按教学机构查询，不限）分页列表，可进入教师详情页。

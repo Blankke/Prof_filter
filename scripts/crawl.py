@@ -33,6 +33,9 @@ def main() -> None:
     parser.add_argument("--limit", type=int, default=None, help="Limit teacher count during crawl")
     parser.add_argument("--build-catalog", action="store_true", help="Build a live catalog from implemented school spiders")
     parser.add_argument("--output", default=str(BASE_DIR / "data" / "live_catalog.json"), help="Output path for the built catalog")
+    parser.add_argument("--cache-dir", default=str(BASE_DIR / "data" / "cache"), help="Cache directory for school snapshots and OpenAlex responses")
+    parser.add_argument("--refresh", action="store_true", help="Ignore school cache and rebuild data from source")
+    parser.add_argument("--quiet", action="store_true", help="Disable progress logs during build-catalog")
     args = parser.parse_args()
 
     seeds = load_seeds()
@@ -46,7 +49,14 @@ def main() -> None:
         return
 
     if args.build_catalog:
-        catalog = build_catalog(CONFIG_PATH, school_filter=args.school, limit=args.limit)
+        catalog = build_catalog(
+            CONFIG_PATH,
+            school_filter=args.school,
+            limit=args.limit,
+            cache_dir=Path(args.cache_dir),
+            refresh=args.refresh,
+            log_progress=not args.quiet,
+        )
         output_path = Path(args.output)
         write_catalog(catalog, output_path)
         print(json.dumps({"output": str(output_path), "schools": len(catalog.schools), "teachers": len(catalog.teachers)}, ensure_ascii=False))

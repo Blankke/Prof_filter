@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from urllib.parse import urljoin
 
 from app.models import Teacher
 from crawler.core.models import FetchedPage
@@ -15,37 +16,55 @@ class PkuSpider(BaseSchoolSpider):
         soup = self.fetch_profile(self.seed.faculty_entry or "")
         links: list[str] = []
         seen: set[str] = set()
-        for anchor in soup.select('a[href*="info/"]'):
-            href = anchor.get("href", "")
-            text = self.clean_text(anchor.get_text(" ", strip=True))
-            if not href or not text:
-                continue
-            absolute = self.make_absolute(href)
-            if absolute in seen:
-                continue
-            seen.add(absolute)
-            links.append(absolute)
+        for page_url in self.list_page_urls(soup):
+            page_soup = self.fetch_profile(page_url)
+            for anchor in page_soup.select('a[href*="info/"]'):
+                href = anchor.get("href", "")
+                text = self.clean_text(anchor.get_text(" ", strip=True))
+                if not href or not text:
+                    continue
+                absolute = urljoin(page_url, href)
+                if absolute in seen:
+                    continue
+                seen.add(absolute)
+                links.append(absolute)
         return links
 
     def crawl_teachers(self, limit: int | None = None) -> list[Teacher]:
         soup = self.fetch_profile(self.seed.faculty_entry or "")
-        anchors = [anchor for anchor in soup.select('a[href*="info/"]') if self.clean_text(anchor.get_text(" ", strip=True))]
+        anchors = []
+        for page_url in self.list_page_urls(soup):
+            page_soup = self.fetch_profile(page_url)
+            for anchor in page_soup.select('a[href*="info/"]'):
+                if self.clean_text(anchor.get_text(" ", strip=True)):
+                    anchors.append((page_url, anchor))
         if limit is not None:
             anchors = anchors[:limit]
 
         teachers: list[Teacher] = []
-        for anchor in anchors:
+        seen_ids: set[str] = set()
+        for page_url, anchor in anchors:
             try:
-                teacher = self.parse_teacher(anchor)
+                teacher = self.parse_teacher(anchor, page_url)
             except Exception:
                 continue
-            if teacher is not None:
+            if teacher is not None and teacher.id not in seen_ids:
+                seen_ids.add(teacher.id)
                 teachers.append(teacher)
         return teachers
 
-    def parse_teacher(self, anchor) -> Teacher | None:
+    def list_page_urls(self, soup) -> list[str]:
+        base_url = self.seed.faculty_entry or ""
+        pages = {base_url}
+        for anchor in soup.select('a[href$=".htm"]'):
+            href = anchor.get("href", "")
+            if href == "ALL.htm" or href.startswith("ALL/"):
+                pages.add(urljoin(base_url, href))
+        return sorted(pages)
+
+    def parse_teacher(self, anchor, page_url: str) -> Teacher | None:
         href = anchor.get("href", "")
-        absolute_url = self.make_absolute(href)
+        absolute_url = urljoin(page_url, href)
         summary_line = self.clean_text(anchor.get_text(" ", strip=True))
         if not summary_line:
             return None

@@ -102,4 +102,5 @@ class TsinghuaSpider(BaseSchoolSpider):
                     link=None,
                 )
             )
-        return publications[:5]
+        publications.sort(key=lambda publication: (publication.year, publication.title), reverse=True)
+        return publications[:30]

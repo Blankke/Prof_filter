@@ -6,6 +6,7 @@ Prof Filter is a seven-school aggregation project for public faculty information
 
 - Schools: Tsinghua, Peking, Zhejiang, Shanghai Jiao Tong, Nanjing, Fudan, Renmin.
 - Target output: teacher, lab or team, research directions, recent publications.
+- Publication display policy: keep at most the most recent 30 publications per teacher.
 - Public-only boundary: school sites and public academic indexes.
 
 ## Stack
@@ -39,9 +40,19 @@ Open http://127.0.0.1:8000/
 
 ```bash
 .venv/bin/python scripts/crawl.py --build-catalog
+.venv/bin/python scripts/crawl.py --build-catalog --refresh
+.venv/bin/python scripts/crawl.py --build-catalog --school pku --refresh
 .venv/bin/python scripts/export_data.py
 .venv/bin/python scripts/crawl.py --list
 ```
+
+## Pipeline behavior
+
+- School-level progress logs are printed during `--build-catalog` unless `--quiet` is used.
+- HTTP requests for teacher pages and OpenAlex enrichment use timeouts and retry limits.
+- School results are cached in `data/cache/schools/` so repeated runs do not always re-crawl everything.
+- OpenAlex author and works responses are cached in `data/cache/openalex/`.
+- Use `--refresh` to ignore caches and rebuild from upstream sources.
 
 ## Project layout
 
@@ -61,6 +72,7 @@ Implemented now:
 - FastAPI endpoints for browsing and exporting results.
 - A polished dashboard for school overview and teacher exploration.
 - Real adapters for 清华大学 and 北京大学 public faculty pages.
+- Real adapters for 南京大学 and 上海交通大学 are in place and ready for broader validation.
 - Spider registry and adapter placeholders for the remaining schools.
 
 Still to do:
