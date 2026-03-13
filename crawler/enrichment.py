@@ -64,6 +64,7 @@ class OpenAlexEnricher:
             status_forcelist=(429, 500, 502, 503, 504),
             allowed_methods=("GET",),
             raise_on_status=False,
+            respect_retry_after_header=False,
         )
         adapter = HTTPAdapter(max_retries=retry)
         self.session.mount("http://", adapter)
@@ -75,22 +76,32 @@ class OpenAlexEnricher:
             (self.cache_dir / "dblp_authors").mkdir(parents=True, exist_ok=True)
             (self.cache_dir / "dblp_pid").mkdir(parents=True, exist_ok=True)
             (self.cache_dir / "scholar_web").mkdir(parents=True, exist_ok=True)
+            (self.cache_dir / "homepages").mkdir(parents=True, exist_ok=True)
 
     def enrich_teacher(self, teacher: Teacher) -> Teacher:
         existing_titles = {publication.title.casefold() for publication in teacher.recent_publications}
         enriched = list(teacher.recent_publications)
         openalex_added = 0
+        homepage_added = 0
         dblp_added = 0
         scholar_added = 0
         scholar_web_added = 0
+        skip_external_lookup = self.should_skip_external_lookup(teacher)
 
-        author_id = self.safe_call(
-            teacher=teacher,
-            source="OpenAlex",
-            operation="match-author",
-            func=lambda: self.match_author_id(teacher),
-            default=None,
-        )
+        if skip_external_lookup and self.log_progress:
+            print(
+                f"    [papers-skip-external] {teacher.school} {teacher.name} reason=weak-name only=School Homepage"
+            )
+
+        author_id = None
+        if not skip_external_lookup:
+            author_id = self.safe_call(
+                teacher=teacher,
+                source="OpenAlex",
+                operation="match-author",
+                func=lambda: self.match_author_id(teacher),
+                default=None,
+            )
         if author_id:
             openalex_added = self.append_unique_publications(
                 enriched=enriched,
@@ -108,6 +119,24 @@ class OpenAlexEnricher:
         if len(enriched) < TARGET_PUBLICATIONS:
             if self.log_progress:
                 print(
+                    f"    [papers-trigger] {teacher.school} {teacher.name} source=School Homepage reason=below-target current={len(enriched)} target={TARGET_PUBLICATIONS}"
+                )
+            homepage_added = self.append_unique_publications(
+                enriched=enriched,
+                existing_titles=existing_titles,
+                publications=self.safe_call(
+                    teacher=teacher,
+                    source="School Homepage",
+                    operation="fetch-works",
+                    func=lambda: self.fetch_recent_works_homepage(teacher),
+                    default=[],
+                ),
+                limit=TARGET_PUBLICATIONS,
+            )
+
+        if len(enriched) < TARGET_PUBLICATIONS and not skip_external_lookup:
+            if self.log_progress:
+                print(
                     f"    [papers-trigger] {teacher.school} {teacher.name} source=DBLP reason=below-target current={len(enriched)} target={TARGET_PUBLICATIONS}"
                 )
             dblp_added = self.append_unique_publications(
@@ -123,7 +152,7 @@ class OpenAlexEnricher:
                 limit=TARGET_PUBLICATIONS,
             )
 
-        if len(enriched) < TARGET_PUBLICATIONS:
+        if len(enriched) < TARGET_PUBLICATIONS and not skip_external_lookup:
             if self.log_progress:
                 print(
                     f"    [papers-trigger] {teacher.school} {teacher.name} source=Google Scholar reason=below-target current={len(enriched)} target={TARGET_PUBLICATIONS}"
@@ -141,7 +170,7 @@ class OpenAlexEnricher:
                 limit=TARGET_PUBLICATIONS,
             )
 
-        if len(enriched) < TARGET_PUBLICATIONS:
+        if len(enriched) < TARGET_PUBLICATIONS and not skip_external_lookup:
             if self.log_progress:
                 print(
                     f"    [papers-trigger] {teacher.school} {teacher.name} source=Google Scholar Web reason=below-target current={len(enriched)} target={TARGET_PUBLICATIONS}"
@@ -170,6 +199,13 @@ class OpenAlexEnricher:
             print(
                 f"    [papers-openalex] {teacher.school} {teacher.name} added={openalex_added} openalex_publications={openalex_count}"
             )
+            if homepage_added > 0:
+                homepage_count = sum(
+                    1 for publication in teacher.recent_publications if publication.source == "School Homepage"
+                )
+                print(
+                    f"    [papers-homepage] {teacher.school} {teacher.name} added={homepage_added} homepage_publications={homepage_count}"
+                )
             if dblp_added > 0:
                 dblp_count = sum(1 for publication in teacher.recent_publications if publication.source == "DBLP")
                 print(
@@ -207,6 +243,22 @@ class OpenAlexEnricher:
             enriched.append(publication)
             added += 1
         return added
+
+    def should_skip_external_lookup(self, teacher: Teacher) -> bool:
+        canonical = self.canonicalize_teacher_name(teacher.name, teacher.school)
+        cleaned = re.sub(r"\s+", "", canonical)
+        if not cleaned:
+            return True
+
+        # Single-character CJK names are highly ambiguous and trigger costly no-hit retries.
+        if re.fullmatch(r"[\u4e00-\u9fff]", cleaned):
+            return True
+
+        # One-letter latin token is also too weak for external author matching.
+        if re.fullmatch(r"[A-Za-z]", cleaned):
+            return True
+
+        return False
 
     def safe_call(self, teacher: Teacher, source: str, operation: str, func, default):
         try:
@@ -298,6 +350,131 @@ class OpenAlexEnricher:
                     link=str(link) if link else None,
                 )
             )
+        return publications
+
+    def fetch_recent_works_homepage(self, teacher: Teacher) -> list[Publication]:
+        publications: list[Publication] = []
+        seen_titles: set[str] = set()
+        candidate_urls: list[str] = []
+
+        if teacher.homepage and teacher.homepage.startswith(("http://", "https://")):
+            candidate_urls.append(teacher.homepage)
+
+        for url in re.findall(r"https?://[^\s)\]}>\"']+", teacher.summary or ""):
+            candidate_urls.append(url.rstrip(".,;:)]}"))
+
+        for url in dict.fromkeys(candidate_urls):
+            html = self.cached_get_text(
+                url=url,
+                params=None,
+                cache_bucket="homepages",
+                cache_key=f"{teacher.school}:{teacher.name}:{url}",
+            )
+            if not html:
+                continue
+
+            soup = BeautifulSoup(html, "lxml")
+            for node in soup(["script", "style", "noscript"]):
+                node.extract()
+
+            raw_blocks = [
+                self.clean_text(tag.get_text(" ", strip=True))
+                for tag in soup.select("li, p, div")
+                if self.clean_text(tag.get_text(" ", strip=True))
+            ]
+            raw_blocks.append(self.clean_text(soup.get_text(" ", strip=True)))
+
+            for publication in self.extract_publications_from_text_blocks(raw_blocks, source="School Homepage", link=url):
+                title_key = publication.title.casefold()
+                if title_key in seen_titles:
+                    continue
+                seen_titles.add(title_key)
+                publications.append(publication)
+                if len(publications) >= TARGET_PUBLICATIONS:
+                    return publications
+
+        summary_blocks = [self.clean_text(teacher.summary)] if teacher.summary else []
+        for publication in self.extract_publications_from_text_blocks(summary_blocks, source="School Homepage", link=teacher.homepage):
+            title_key = publication.title.casefold()
+            if title_key in seen_titles:
+                continue
+            seen_titles.add(title_key)
+            publications.append(publication)
+            if len(publications) >= TARGET_PUBLICATIONS:
+                break
+
+        return publications
+
+    def extract_publications_from_text_blocks(
+        self,
+        blocks: list[str],
+        source: str,
+        link: str | None,
+    ) -> list[Publication]:
+        publications: list[Publication] = []
+        seen: set[str] = set()
+        marker_pattern = re.compile(
+            r"论文|发表|Journal|Proceedings|Conference|IEEE|ACM|AAAI|IJCAI|NeurIPS|CVPR|ICML|ICLR|SIGKDD|SIGCOMM|TPAMI|TKDE|TIFS",
+            re.IGNORECASE,
+        )
+
+        for block in blocks:
+            if not block:
+                continue
+            for fragment in re.split(r"[\n\r。；;]", block):
+                fragment = self.clean_text(fragment)
+                if len(fragment) < 20 or len(fragment) > 320:
+                    continue
+                year = self.extract_year(fragment)
+                if year is None or not (YEAR_START <= year <= YEAR_END):
+                    continue
+                if marker_pattern.search(fragment) is None:
+                    continue
+
+                title = re.sub(r"^\[?\d+\]?\.\s*", "", fragment)
+                title = re.sub(r"^(论文|发表论文|代表性论文)[:：]?\s*", "", title, flags=re.IGNORECASE)
+                title = self.clean_publication_title(title)
+                if not title:
+                    continue
+                key = title.casefold()
+                if key in seen:
+                    continue
+                seen.add(key)
+
+                venue = "School Homepage"
+                upper = title.upper()
+                for token in [
+                    "NEURIPS",
+                    "CVPR",
+                    "ICML",
+                    "ICLR",
+                    "AAAI",
+                    "IJCAI",
+                    "SIGKDD",
+                    "SIGCOMM",
+                    "IEEE",
+                    "ACM",
+                ]:
+                    if token in upper:
+                        venue = token
+                        break
+
+                lower = title.casefold()
+                kind = "conference" if any(token in lower for token in ["proc", "conf", "workshop", "symposium"]) else "journal"
+                publications.append(
+                    Publication(
+                        title=title,
+                        venue=venue,
+                        year=year,
+                        kind=kind,
+                        source=source,
+                        link=link,
+                    )
+                )
+
+                if len(publications) >= TARGET_PUBLICATIONS:
+                    return publications
+
         return publications
 
     def fetch_recent_works_scholar_web(self, teacher: Teacher) -> list[Publication]:

@@ -15,8 +15,8 @@ schools:
     name: 浙江大学
     faculties:
       - 计算机科学与技术学院
-    faculty_entry: null
-    notes: Fill official faculty listing URL during adapter implementation.
+    faculty_entry: http://www.cs.zju.edu.cn/_upload/article/files/ce/9d/5b7a5fba4904a1b7e5e8b1d11ad9/440fa093-de6f-41e1-a80b-dd65a34167d2.xlsx
+    notes: 博导/硕导名单 xlsx，可用于教师名单导入与后续 Scholar 补强。
   - id: sjtu
     name: 上海交通大学
     faculties:

@@ -4,6 +4,8 @@ const state = {
   overview: null,
   allTeachers: [],
   titleFilter: "",
+  publicationFilter: "",
+  sourceFilter: "",
   sortBy: "name",
   viewMode: "cards",
   page: 1,
@@ -21,10 +23,15 @@ const elements = {
   areaCloud: document.getElementById("area-cloud"),
   teacherTemplate: document.getElementById("teacher-card-template"),
   titleChips: document.getElementById("title-chips"),
+  publicationChips: document.getElementById("publication-chips"),
+  sourceSelect: document.getElementById("source-select"),
   sortSelect: document.getElementById("sort-select"),
   viewCards: document.getElementById("view-cards"),
   viewCompact: document.getElementById("view-compact"),
   pagination: document.getElementById("pagination"),
+  classBySchool: document.getElementById("class-by-school"),
+  classByTitle: document.getElementById("class-by-title"),
+  classByPublication: document.getElementById("class-by-publication"),
 };
 
 async function getJson(url) {
@@ -52,6 +59,19 @@ function titleMatches(teacher) {
   return true;
 }
 
+function publicationMatches(teacher) {
+  if (!state.publicationFilter) return true;
+  const count = teacher.recent_publications?.length || 0;
+  if (state.publicationFilter === "has") return count > 0;
+  if (state.publicationFilter === "none") return count === 0;
+  return true;
+}
+
+function sourceMatches(teacher) {
+  if (!state.sourceFilter) return true;
+  return (teacher.recent_publications || []).some((paper) => paper.source === state.sourceFilter);
+}
+
 function getTitleRank(title) {
   if (title.includes("助理教授")) return 2;
   if (title.includes("副教授")) return 1;
@@ -62,7 +82,7 @@ function getTitleRank(title) {
 }
 
 function getSortedFiltered() {
-  const filtered = state.allTeachers.filter(titleMatches);
+  const filtered = state.allTeachers.filter((teacher) => titleMatches(teacher) && publicationMatches(teacher) && sourceMatches(teacher));
   return filtered.sort((a, b) => {
     if (state.sortBy === "title") {
       const diff = getTitleRank(a.title) - getTitleRank(b.title);
@@ -70,6 +90,76 @@ function getSortedFiltered() {
     }
     return a.name.localeCompare(b.name, "zh");
   });
+}
+
+function titleCategory(title) {
+  if (title.includes("助理教授")) return "助理教授";
+  if (title.includes("副教授")) return "副教授";
+  if (title.includes("教授")) return "教授";
+  if (title.includes("讲师")) return "讲师";
+  if (title.includes("研究员")) return "研究员";
+  return "其他/未标注";
+}
+
+function publicationCategory(teacher) {
+  const n = teacher.recent_publications?.length || 0;
+  if (n === 0) return "0篇";
+  if (n <= 5) return "1-5篇";
+  if (n <= 15) return "6-15篇";
+  return "16篇以上";
+}
+
+function renderClassList(target, entries) {
+  target.innerHTML = "";
+  entries.forEach(([label, value]) => {
+    const item = document.createElement("div");
+    item.className = "class-item";
+    item.innerHTML = `<span>${label}</span><strong>${value}</strong>`;
+    target.append(item);
+  });
+}
+
+function renderClassification(teachers) {
+  const schoolCount = {};
+  const titleCount = {};
+  const publicationCount = {};
+
+  teachers.forEach((teacher) => {
+    schoolCount[teacher.school] = (schoolCount[teacher.school] || 0) + 1;
+    const title = titleCategory(teacher.title || "");
+    titleCount[title] = (titleCount[title] || 0) + 1;
+    const bucket = publicationCategory(teacher);
+    publicationCount[bucket] = (publicationCount[bucket] || 0) + 1;
+  });
+
+  const sortByCount = (obj) => Object.entries(obj).sort((a, b) => b[1] - a[1]);
+  renderClassList(elements.classBySchool, sortByCount(schoolCount));
+  renderClassList(elements.classByTitle, sortByCount(titleCount));
+  renderClassList(elements.classByPublication, sortByCount(publicationCount));
+}
+
+function refreshSourceOptions(teachers) {
+  const current = elements.sourceSelect.value;
+  const sourceCount = {};
+  teachers.forEach((teacher) => {
+    (teacher.recent_publications || []).forEach((paper) => {
+      sourceCount[paper.source] = (sourceCount[paper.source] || 0) + 1;
+    });
+  });
+
+  elements.sourceSelect.innerHTML = '<option value="">全部来源</option>';
+  Object.entries(sourceCount)
+    .sort((a, b) => b[1] - a[1])
+    .forEach(([source, count]) => {
+      const option = document.createElement("option");
+      option.value = source;
+      option.textContent = `${source} (${count})`;
+      elements.sourceSelect.append(option);
+    });
+
+  if (current && sourceCount[current]) {
+    elements.sourceSelect.value = current;
+  }
 }
 
 function renderOverview(overview) {
@@ -341,6 +431,7 @@ function renderCompactView(teachers) {
 
 function render() {
   const sorted = getSortedFiltered();
+  renderClassification(sorted);
   const total = sorted.length;
   const start = (state.page - 1) * PAGE_SIZE;
   const page = sorted.slice(start, start + PAGE_SIZE);
@@ -367,6 +458,7 @@ function render() {
 async function loadTeachers() {
   const teachers = await getJson(`/api/teachers${buildQueryString()}`);
   state.allTeachers = teachers;
+  refreshSourceOptions(teachers);
   state.page = 1;
   render();
 }
@@ -384,6 +476,22 @@ elements.titleChips.addEventListener("click", (e) => {
   elements.titleChips.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
   chip.classList.add("active");
   state.titleFilter = chip.dataset.title;
+  state.page = 1;
+  render();
+});
+
+elements.publicationChips.addEventListener("click", (e) => {
+  const chip = e.target.closest(".chip");
+  if (!chip) return;
+  elements.publicationChips.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+  chip.classList.add("active");
+  state.publicationFilter = chip.dataset.publication;
+  state.page = 1;
+  render();
+});
+
+elements.sourceSelect.addEventListener("change", () => {
+  state.sourceFilter = elements.sourceSelect.value;
   state.page = 1;
   render();
 });
@@ -419,6 +527,11 @@ elements.resetButton.addEventListener("click", async () => {
   elements.titleChips.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
   elements.titleChips.querySelector('.chip[data-title=""]').classList.add("active");
   state.titleFilter = "";
+  elements.publicationChips.querySelectorAll(".chip").forEach((c) => c.classList.remove("active"));
+  elements.publicationChips.querySelector('.chip[data-publication=""]').classList.add("active");
+  state.publicationFilter = "";
+  elements.sourceSelect.value = "";
+  state.sourceFilter = "";
   state.sortBy = "name";
   elements.sortSelect.value = "name";
   await loadTeachers();

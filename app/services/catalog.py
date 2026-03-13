@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from datetime import datetime
 import json
 from pathlib import Path
 
@@ -13,9 +14,41 @@ class CatalogService:
 
     def load(self) -> Catalog:
         if self._catalog is None:
-            payload = json.loads(self.data_path.read_text(encoding="utf-8"))
+            payload = self.load_payload()
             self._catalog = Catalog.model_validate(payload)
         return self._catalog
+
+    def load_payload(self) -> dict[str, object]:
+        if self.data_path.is_dir():
+            return self.load_payload_from_shards(self.data_path)
+        return json.loads(self.data_path.read_text(encoding="utf-8"))
+
+    @staticmethod
+    def load_payload_from_shards(shards_dir: Path) -> dict[str, object]:
+        schools: list[dict[str, object]] = []
+        teachers: list[dict[str, object]] = []
+        school_ids: set[str] = set()
+        notes: list[str] = []
+
+        for path in sorted(shards_dir.glob("*.json")):
+            payload = json.loads(path.read_text(encoding="utf-8"))
+            for school in payload.get("schools", []):
+                school_id = school.get("id")
+                if school_id in school_ids:
+                    continue
+                school_ids.add(school_id)
+                schools.append(school)
+            teachers.extend(payload.get("teachers", []))
+            note = str(payload.get("note") or "").strip()
+            if note and note not in notes:
+                notes.append(note)
+
+        return {
+            "generated_at": datetime.now().astimezone().isoformat(),
+            "note": " | ".join(notes) if notes else "Merged from per-school catalogs.",
+            "schools": schools,
+            "teachers": teachers,
+        }
 
     def overview(self) -> dict[str, object]:
         catalog = self.load()

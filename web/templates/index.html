@@ -62,6 +62,20 @@
               <button class="chip" data-title="讲师">讲师</button>
             </div>
           </section>
+          <section>
+            <label>论文状态</label>
+            <div id="publication-chips" class="chip-group">
+              <button class="chip active" data-publication="">全部</button>
+              <button class="chip" data-publication="has">有论文</button>
+              <button class="chip" data-publication="none">0论文</button>
+            </div>
+          </section>
+          <section>
+            <label for="source-select">论文来源</label>
+            <select id="source-select">
+              <option value="">全部来源</option>
+            </select>
+          </section>
           <section class="actions">
             <button id="apply-filters" class="primary">应用筛选</button>
             <button id="reset-filters" class="secondary">重置</button>
@@ -85,6 +99,21 @@
               <p class="panel-title">研究热区</p>
               <div id="area-cloud" class="area-cloud"></div>
             </div>
+          </section>
+
+          <section class="classification-strip">
+            <article class="class-card">
+              <p class="panel-title">学校分布</p>
+              <div id="class-by-school" class="class-list"></div>
+            </article>
+            <article class="class-card">
+              <p class="panel-title">职称分布</p>
+              <div id="class-by-title" class="class-list"></div>
+            </article>
+            <article class="class-card">
+              <p class="panel-title">论文区间</p>
+              <div id="class-by-publication" class="class-list"></div>
+            </article>
           </section>
 
           <section>

@@ -1,0 +1,2174 @@
+{
+  "generated_at": "2026-03-13T16:57:39.277120+08:00",
+  "note": "Live catalog generated from public faculty pages. Some schools are still pending adapter implementation.",
+  "schools": [
+    {
+      "id": "pku",
+      "name": "北京大学",
+      "faculties": [
+        "计算机学院"
+      ]
+    }
+  ],
+  "teachers": [
+    {
+      "id": "pku-1602",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "边凯归",
+      "title": "长聘副教授",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://net.pku.edu.cn/~bkg/",
+      "research_areas": [
+        "计算机网络"
+      ],
+      "recent_publications": [],
+      "summary": "无线网络、移动计算、社交网络、网络安全 邮箱：bkg@pku.edu.cn"
+    },
+    {
+      "id": "pku-3090",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "曹东刚",
+      "title": "研究员",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://caodg.github.io/caodg/",
+      "research_areas": [
+        "系统软件"
+      ],
+      "recent_publications": [],
+      "summary": "曹东刚 职称：研究员 研究所：软件研究所 研究领域：系统软件 办公电话：86-10-62757670-11 电子邮件：caodg pku.edu.cn 邮箱：caodg@pku.edu.cn"
+    },
+    {
+      "id": "pku-1603",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "曹永知",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://主要研究方向",
+      "research_areas": [
+        "计算机理论"
+      ],
+      "recent_publications": [],
+      "summary": "形式化方法、隐私性与安全性、人工智能基础 科研/教育经历 2007，博士后，清华大学 2003，博士，北京师范大学 邮箱：caoyz@pku.edu.cn"
+    },
+    {
+      "id": "pku-3081",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "曾炜",
+      "title": "研究员",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://idm.pku.edu.cn/info/1017/1047.htm",
+      "research_areas": [
+        "人工智能",
+        "多媒体"
+      ],
+      "recent_publications": [],
+      "summary": "AI平台与系统、计算机视觉、媒体处理、对象检测、运动对象分割 科研/教育经历 2014-05至今，北京大学，计算机学院，数字媒体研究所，副研究员 2005-06至2014-04，日电(中国)有限公司，NEC中国研究院，高级研究员、研究部长 1993-09 至 2005-02，哈尔滨工业大学，计算机系，计算机应用专业，本、硕、博 研究成果概况 曾炜，博士，2005年毕业于哈尔滨工业大学计算机应用技术专业；博士毕业后加入NEC中国研究院，从事多媒体技术应用系统研究，先后任副研究员、研究员、高级研究员、研究部长。2014年5月，曾炜博士加盟北京大学视频与视觉技术国家工程研究中心，任副研究员。曾炜博士拥有20年相关专业研发背景、9年跨国公司研究经历，长期从事人工智能、智能计算系统、图像处理、计算机视觉、模式识别、多媒体领域的研究工作。曾炜博士先后发表50余篇学术论文，申请超过20多项中外专利，获得10多项国家和省部级科研项目资金资助；担任CVPR2021、CVPR2018、BigMM2020、BigMM2019、BigMM2018、ICPR2020，ICPR2016、ACCV2018等的PC Member或审稿人；担任科技部新一代人工智能启智社区技术委员会委员。 邮箱：weizeng@pku.edu.cn"
+    },
+    {
+      "id": "pku-1609",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "常宝宝",
+      "title": "副教授",
+      "lab": "计算语言学研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://icl.pku.edu.cn/members/chbb/",
+      "research_areas": [
+        "自然语言处理",
+        "句法语义分析"
+      ],
+      "recent_publications": [],
+      "summary": "自然语言处理、句法语义分析 科研/教育经历 1999年，博士，北京大学 邮箱：chbb@pku.edu.cn"
+    },
+    {
+      "id": "pku-3165",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈斌",
+      "title": "教授",
+      "lab": "元宇宙技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/3165.htm",
+      "research_areas": [
+        "图形与多媒体"
+      ],
+      "recent_publications": [],
+      "summary": "主要从事虚拟现实，虚拟地理环境及相关研究，内容涉及基于影像的三维重建，生成式虚拟环境构建等。 主持并参与多项国家自然科学基金、国家重点研发计划项目课题，以及中国科协、北京市科委、腾讯公司等企事业单位委托的横向科研项目。 主要学术任职 - 国际数字地球学会，中国国家委员会委员，虚拟地理环境专业委员会副主任委员； - 中国青少年科技教育工作者协会，人工智能普及专委会委员。 主要教学课程 - 本科生课程：《数据结构与算法》、《计算概论》、《人工智能与计算思维》、《离散数学》、《地球与人类文明》； - 慕课课程：《离散数学概论》、《人工智能与信息社会》、《地球与人类文明》、《数据结构与算法Python版》、《Python语言基础与应用》 邮箱：gischen@pku.edu.cn"
+    },
+    {
+      "id": "pku-2902",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈国璋",
+      "title": "助理教授/研究员",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/2902.htm",
+      "research_areas": [
+        "类脑计算"
+      ],
+      "recent_publications": [],
+      "summary": "陈国璋 职称：助理教授/研究员 研究所：视频与视觉技术研究所 研究领域：类脑计算 电子邮件：guozhang.chen pku.edu.cn 邮箱：guozhang.chen@pku.edu.cn"
+    },
+    {
+      "id": "pku-1610",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈泓婕",
+      "title": "副教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/1610.htm",
+      "research_areas": [
+        "软件工程",
+        "程序设计语言"
+      ],
+      "recent_publications": [],
+      "summary": "陈泓婕 职称：副教授 研究所：软件研究所 研究领域：软件工程、程序设计语言 电子邮件：chenhj sei.pku.edu.cn 邮箱：chenhj@sei.pku.edu.cn"
+    },
+    {
+      "id": "pku-1611",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈立军",
+      "title": "副教授",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/1611.htm",
+      "research_areas": [
+        "数据库与大数据"
+      ],
+      "recent_publications": [],
+      "summary": "陈立军 职称：副教授 研究所：数据科学与工程研究所 研究领域：数据库与大数据 办公电话：86-10-62765825 电子邮件：ljchen pku.edu.cn 邮箱：ljchen@pku.edu.cn"
+    },
+    {
+      "id": "pku-1612",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈薇",
+      "title": "副研究员",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://主要研究方向",
+      "research_areas": [
+        "数据库与数据挖掘",
+        "非结构化数据管理"
+      ],
+      "recent_publications": [],
+      "summary": "陈薇 职称：副研究员 研究所：数据科学与工程研究所 研究领域：数据库与数据挖掘、非结构化数据管理 办公电话：86-10-62756382 电子邮件：pekingchenwei pku.edu.cn 邮箱：pekingchenwei@pku.edu.cn"
+    },
+    {
+      "id": "pku-2863",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈翔",
+      "title": "预聘副教授",
+      "lab": "网络与高能效计算研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://if-lab-pku.github.io/",
+      "research_areas": [
+        "移动智能计算系统"
+      ],
+      "recent_publications": [
+        {
+          "title": "† Z. Zheng, X. Cui, S. Zheng, M. Li, J. Chen, Y. Liang, X Chen. . “DynaMo: Runtime Switchable Quantization for MoE with Cross-Dataset Adaptation”, in Proceedings of the Design, Automation & Test in Europe Conference , 2026",
+          "venue": "School Homepage",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://if-lab-pku.github.io/"
+        },
+        {
+          "title": "† C. Xu, F. Yu, Z. Xu, N. Inkawhich, and X. Chen . “Out-of-Distribution Detection via Deep Multi-Comprehension Ensemble,” in Proceedings of the International Conference on Machine Learning , 2024",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://if-lab-pku.github.io/"
+        },
+        {
+          "title": "† C. Xu, F. Yu, Z. Xu, C. Liu, J. Xiong, and X. Chen . “QuadraNet: Improving High-Order Neural Interaction Efficiency with Hardware-Aware Quadratic Neural Networks,” in Proceedings of the Asia and South Pacific Design Automation Conference , pp. 19~25, 2024",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://if-lab-pku.github.io/"
+        },
+        {
+          "title": "Best Paper Award Nomination — ASP-DAC (2024) The 29 th Asia and South Pacific Design Automation Conference “QuadraNet: Improving High-Order Neural Interaction Efficiency with Hardware-Aware Quadratic Neural Networks”",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://if-lab-pku.github.io/"
+        },
+        {
+          "title": "* W. Zhang, Y. Wang, X. Chen, L. Liu, and Z. Tian . “Collaborative Learning based Spectrum Sensing under Partial Observations,” IEEE Transactions on Cognitive Communications and Networking , Apr. 2024",
+          "venue": "IEEE",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://if-lab-pku.github.io/"
+        },
+        {
+          "title": "* P. Xu, Y. Wang, X. Chen, and Z. Tian . “Communication-Efficient Decentralized Dynamic Kernel Learning,” in Proceedings of the International Conference on Acoustics, Speech, and Signal Processing , pp. 7135~7139, 2024",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://if-lab-pku.github.io/"
+        },
+        {
+          "title": "* F. Yu, Z. Xu, L. Shangguan, D. Wang, D. Stamoulis, R. Madhok, N. Karianakis, A. Li, C. Liu, Y. Chen, and X. Chen . “Rethinking Latency-Aware DNN Design With GPU Tail Effect Analysis,” IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems , May 2024",
+          "venue": "IEEE",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://if-lab-pku.github.io/"
+        }
+      ],
+      "summary": "高能效移动边缘计算系统 高性能分布式与大规模人工智能系统 新型移动人工智能应用 邮箱：xiang.chen@pku.edu.cn"
+    },
+    {
+      "id": "pku-1604",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈向群",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://操作系统，嵌入式软件，普适计算软件工程",
+      "research_areas": [
+        "操作系统",
+        "嵌入式软件",
+        "普适计算软件工程"
+      ],
+      "recent_publications": [],
+      "summary": "陈向群 职称：教授 研究所：软件研究所 研究领域：操作系统，嵌入式软件，普适计算软件工程 办公电话：86-10-6275 7160 电子邮件：cherry sei.pku.edu.cn 邮箱：cherry@sei.pku.edu.cn"
+    },
+    {
+      "id": "pku-1729",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "张路",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://软件工程",
+      "research_areas": [
+        "软件工程"
+      ],
+      "recent_publications": [],
+      "summary": "张路 职称：教授 研究所：软件研究所 研究领域：软件工程 办公电话：86-10-6275 1794 电子邮件：zhanglu sei.pku.edu.cn 邮箱：zhanglu@sei.pku.edu.cn"
+    },
+    {
+      "id": "pku-1730",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "张铭",
+      "title": "教授",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://pkudlib.github.io/",
+      "research_areas": [
+        "文本挖掘",
+        "知识图谱",
+        "图神经网络",
+        "计算机教育研究"
+      ],
+      "recent_publications": [
+        {
+          "title": "本组博士生黄进晟等人在NAACL 2025合作发表论文MMEvalPro: Calibrating Multimodal Benchmarks Towards Trustworthy and Efficient Evaluation",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "我组在自然语言处理顶会 ACL 2025 有五篇论文上榜",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "张铭老师团队于 ICML2025 共有四篇高质量论文发表（ICML2025 共收到12107篇投稿，其中3260篇被接受，接受率为26.9%）",
+          "venue": "ICML",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "张铭老师团队于 AAAI2025 共有五篇高质量论文发表（AAAI2025 共收到12957篇投稿，其中3032篇被接受，接受率为23.4%）",
+          "venue": "AAAI",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "Yusheng Zhao, Xiao Luo, Haomin Wen, Zhiping Xiao, Wei Ju, Ming Zhang. Embracing Large Language Models in Traffic Flow Forecasting. 张铭老师团队于 ICML2025 共有四篇高质量论文发表（ICML2025 共收到12107篇投稿，其中3260篇被接受，接受率为26.9%）",
+          "venue": "ICML",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "祝2024届毕业组员毕业快乐，未来可期！博士：刘泽群，硕士：薛逸飞，学士：陈滨琪、朱正佑、渡辺阿丽莎",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "本组博士生袁野等人在NAACL 2024上发表了题为：Measuring Social Norms of Large Language Models的研究论文",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "本组博士生袁野等人在AAAI 2024上发表了题为：Preparing Lessons for Progressive Training on Language Models的研究论文",
+          "venue": "AAAI",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "本组博士生罗钧宇等人在IEEE TPAMI 2024合作发表论文GALA: Graph Diffusion-based Alignment with Jigsaw for Source-free Domain Adaptation",
+          "venue": "IEEE",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "本组博士毕业生沈剑豪、博士生袁野、博士生Srbuhi Mirzoyan等人在ICLR 2024上发表了题为：Measuring Vision-Language STEM Skills of Neural Models的研究论文",
+          "venue": "ICLR",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "张铭老师团队于 ICML2024 共有四篇高质量论文发表（ICML2024 共收到9473篇投稿，其中2609篇被接受，接受率为27.5%）",
+          "venue": "ICML",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        },
+        {
+          "title": "2024届博士毕业生刘泽群，获得2024年“ACM China北京地区优秀博士论文奖”，入职微软亚洲研究院",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://pkudlib.github.io/"
+        }
+      ],
+      "summary": "张铭 职称：教授 研究所：数据科学与工程研究所 研究领域：文本挖掘、知识图谱、图神经网络、计算机教育研究 办公电话：86-10-6276 5822 电子邮件：mzhang_cs pku.edu.cn 邮箱：mzhang_cs@pku.edu.cn"
+    },
+    {
+      "id": "pku-1731",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "张史梁",
+      "title": "长聘副教授",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://www.pkuvmc.com/",
+      "research_areas": [
+        "多媒体内容分析与检索",
+        "计算机视觉",
+        "模式识别"
+      ],
+      "recent_publications": [],
+      "summary": "张史梁 职称：长聘副教授 研究所：视频与视觉技术研究所 研究领域：多媒体内容分析与检索，计算机视觉，模式识别 电子邮件：slzhang.jdl pku.edu.cn 邮箱：slzhang.jdl@pku.edu.cn"
+    },
+    {
+      "id": "pku-4510",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "张腾",
+      "title": "助理研究员",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://tengzhangpku.github.io",
+      "research_areas": [
+        "新一代集成电路与智能计算系统"
+      ],
+      "recent_publications": [],
+      "summary": "张腾 职称：助理研究员 研究所：视频与视觉技术研究所 研究领域：新一代集成电路与智能计算系统 电子邮件：tengzhang pku.edu.cn 邮箱：tengzhang@pku.edu.cn"
+    },
+    {
+      "id": "pku-1736",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "张伟",
+      "title": "副教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1086/1736.htm",
+      "research_areas": [
+        "软件工程",
+        "程序设计语言"
+      ],
+      "recent_publications": [],
+      "summary": "张伟 职称：副教授 研究所：软件研究所 研究领域：软件工程、程序设计语言 办公电话：86-10-62759074 电子邮件：zhangw.sei pku.edu.cn 邮箱：zhangw.sei@pku.edu.cn"
+    },
+    {
+      "id": "pku-1737",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "张昕",
+      "title": "助理教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://xinpl.github.io/",
+      "research_areas": [
+        "程序设计语言",
+        "软件工程",
+        "高可靠人工智能"
+      ],
+      "recent_publications": [
+        {
+          "title": "Dec 2024 New paper on adding temporal information to machine learning model explanations at AAAI'25",
+          "venue": "AAAI",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://xinpl.github.io/"
+        }
+      ],
+      "summary": "张昕 职称：助理教授 研究所：软件研究所 研究领域：程序设计语言，软件工程，高可靠人工智能 办公电话：86-10-62757670 电子邮件：xin pku.edu.cn 邮箱：xin@pku.edu.cn"
+    },
+    {
+      "id": "pku-1735",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "仉尚航",
+      "title": "助理教授",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://www.shanghangzhang.com/",
+      "research_areas": [
+        "机器学习与计算机视觉",
+        "视觉信息处理与类脑智能"
+      ],
+      "recent_publications": [],
+      "summary": "开放世界泛化机器学习、类脑视觉感知与学习、AI驱动科学计算 邮箱：shanghang@pku.edu.cn"
+    },
+    {
+      "id": "pku-1738",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "赵海燕",
+      "title": "副教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://sei.pku.edu.cn/~zhhy",
+      "research_areas": [
+        "需求工程",
+        "软件复用"
+      ],
+      "recent_publications": [],
+      "summary": "软件工程、软件复用、需求工程、模型变换、程序设计语言等 科研/教育经历 2003 ，博士，东京大学 1988-1991，硕士，北京大学 1984-1988，学士，北京大学 邮箱：zhhy@sei.pku.edu.cn"
+    },
+    {
+      "id": "pku-3087",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "赵俊峰",
+      "title": "研究员",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1086/3087.htm",
+      "research_areas": [
+        "大数据分析",
+        "大语言模型",
+        "知识工程",
+        "数据治理",
+        "城市计算等"
+      ],
+      "recent_publications": [],
+      "summary": "大数据分析、大语言模型、知识工程、数据治理、城市计算等。 邮箱：zhaojf@pku.edu.cn"
+    },
+    {
+      "id": "pku-3365",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "周迪宇",
+      "title": "助理教授",
+      "lab": "网络与高能效研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://zhou-diyu.github.io/",
+      "research_areas": [
+        "操作系统",
+        "存储系统",
+        "体系结构",
+        "形式化验证",
+        "机器学习"
+      ],
+      "recent_publications": [],
+      "summary": "周迪宇 职称：助理教授 研究所：网络与高能效研究所 研究领域：操作系统、存储系统、体系结构、形式化验证、机器学习 办公电话：86-18201525925 电子邮件：diyu.zhou pku.edu.cn 邮箱：diyu.zhou@pku.edu.cn"
+    },
+    {
+      "id": "pku-1732",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "周明辉",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://minghuizhou.github.io",
+      "research_areas": [
+        "开源数字社会学",
+        "复杂系统",
+        "智能开发"
+      ],
+      "recent_publications": [],
+      "summary": "周明辉 职称：教授 研究所：软件研究所 研究领域：开源数字社会学，复杂系统，智能开发 办公电话：86-10-62759074 电子邮件：zhmh pku.edu.cn 邮箱：zhmh@pku.edu.cn"
+    },
+    {
+      "id": "pku-1739",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "邹艳珍",
+      "title": "研究员",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://www.sei.pku.edu.cn/people/zouyz",
+      "research_areas": [
+        "软件工程",
+        "软件复用",
+        "软件数据挖掘"
+      ],
+      "recent_publications": [],
+      "summary": "软件工程、软件复用、软件数据挖掘 科研/教育经历 2004-2010，博士，北京大学 1999-2002，硕士，吉林大学 邮箱：zouyz@pku.edu.cn"
+    },
+    {
+      "id": "pku-1690",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "刘天任",
+      "title": "助理教授",
+      "lab": "前沿计算研究中心",
+      "lab_status": "confirmed",
+      "homepage": "https://liutianren.com/",
+      "research_areas": [
+        "密码学"
+      ],
+      "recent_publications": [],
+      "summary": "刘天任 职称：助理教授 研究所：前沿计算研究中心 研究领域：密码学 办公电话：+86 (0)10 6275-0405 电子邮件：trl pku.edu.cn 邮箱：trl@pku.edu.cn"
+    },
+    {
+      "id": "pku-1689",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "刘田",
+      "title": "副教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1071/1689.htm",
+      "research_areas": [
+        "计算机科学理论"
+      ],
+      "recent_publications": [],
+      "summary": "刘田 职称：副教授 研究所：软件研究所 研究领域：计算机科学理论 办公电话：86-10-62765818 电子邮件：lt pku.edu.cn 邮箱：lt@pku.edu.cn"
+    },
+    {
+      "id": "pku-1691",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "刘先华",
+      "title": "教授",
+      "lab": "系统结构研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1071/1691.htm",
+      "research_areas": [
+        "计算机体系结构"
+      ],
+      "recent_publications": [],
+      "summary": "刘先华 职称：教授 研究所：系统结构研究所 研究领域：计算机体系结构 办公电话：86-10-62759129 电子邮件：lxh mprc.pku.edu.cn 邮箱：lxh@mprc.pku.edu.cn"
+    },
+    {
+      "id": "pku-1692",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "刘扬",
+      "title": "副教授",
+      "lab": "计算语言学研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1071/1692.htm",
+      "research_areas": [
+        "计算语言学",
+        "中文信息处理",
+        "语言知识工程"
+      ],
+      "recent_publications": [],
+      "summary": "计算语言学、中文信息处理、语言知识工程，致力于面向信息处理（以及面向人文领域）的词义理论与计算资源研发工作，目前的兴趣点在汉字、词的形式、意义系统方面（具体见《中文信息学报》等论著，也欢迎确有兴趣且有专长的同学参与课题工作或读研，该跨学科研发工作不限于计算机专业，也欢迎语言学、逻辑、信息管理等具备编程能力的其它专业同学）。 科研/教育经历 2003年获博士学位留校任教，现为北京大学信息学院副教授。 邮箱：liuyang@pku.edu.cn"
+    },
+    {
+      "id": "pku-1681",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "刘云淮",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://www.yunhuai.net",
+      "research_areas": [
+        "物联网",
+        "移动计算",
+        "智慧城市",
+        "工业互联网"
+      ],
+      "recent_publications": [],
+      "summary": "智慧城市、移动计算、物联网、群智感知等方向 邮箱：yunhuai.liu@pku.edu.cn"
+    },
+    {
+      "id": "pku-1694",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "卢宗青",
+      "title": "长聘副教授",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://z0ngqing.github.io",
+      "research_areas": [
+        "强化学习",
+        "多模态大模型",
+        "通用智能体"
+      ],
+      "recent_publications": [
+        {
+          "title": "Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild Hao Luo, Ye Wang, Wanpeng Zhang, Haoqi Yuan, Yicheng Feng, Haiweng Xu, Sipeng Zheng, Zongqing Lu IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026. Details PDF Project",
+          "venue": "CVPR",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://z0ngqing.github.io"
+        },
+        {
+          "title": "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026",
+          "venue": "CVPR",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://z0ngqing.github.io"
+        },
+        {
+          "title": "End-to-End Language-Action Model for Humanoid Whole Body Control Yuxuan Wang, Haobin Jiang, Shiqing Yao, Ziluo Ding, Zongqing Lu IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026. Details PDF Project",
+          "venue": "CVPR",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://z0ngqing.github.io"
+        },
+        {
+          "title": "DemoFunGrasp: Universal Dexterous Functional Grasping via Demonstration-Editing Reinforcement Learning Chuan Mao, Haoqi Yuan, Ziye Huang, Chaoyi Xu, Kai Ma, Zongqing Lu IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), 2026. Details PDF Project",
+          "venue": "CVPR",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://z0ngqing.github.io"
+        },
+        {
+          "title": "Four papers accepted at NeurIPS'25 Fri, Sep 26, 2025 Four papers on multimodal LLMs, reinforcement learning, and robotics were accepted at NeurIPS’25 . Congratulations to all",
+          "venue": "NEURIPS",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://z0ngqing.github.io"
+        },
+        {
+          "title": "NeurIPS 2024 Large-Scale Auction Challenge, Co-Organizer",
+          "venue": "NEURIPS",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://z0ngqing.github.io"
+        },
+        {
+          "title": "Area Chair, ICLR 2024 2025 2026, ICML 2024 2025 2026, NeurIPS 2024 2025",
+          "venue": "NEURIPS",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://z0ngqing.github.io"
+        }
+      ],
+      "summary": "卢宗青 职称：长聘副教授 研究所：视频与视觉技术研究所 研究领域：强化学习、多模态大模型、通用智能体 电子邮件：zongqing.lu pku.edu.cn 邮箱：zongqing.lu@pku.edu.cn"
+    },
+    {
+      "id": "pku-1693",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陆俊林",
+      "title": "教授",
+      "lab": "系统结构研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1071/1693.htm",
+      "research_areas": [
+        "计算机体系结构"
+      ],
+      "recent_publications": [],
+      "summary": "陆俊林 职称：教授 研究所：系统结构研究所 研究领域：计算机体系结构 办公电话：86-10-62765828-831 电子邮件：ljl pku.edu.cn 邮箱：ljl@pku.edu.cn"
+    },
+    {
+      "id": "pku-1683",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "罗国杰",
+      "title": "长聘副教授",
+      "lab": "网络与高能效计算研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://ceca.pku.edu.cn/guojie",
+      "research_areas": [
+        "新型体系结构",
+        "设计自动化"
+      ],
+      "recent_publications": [],
+      "summary": "新型体系结构和设计自动化。包括：（1）可重构架构、近数据架构；（2）硬件代码分析与合成、硬件安全验证、软硬件容错；（3）面向深度学习等热点领域的定制加速器设计。 科研/教育经历 2005-2011，博士，洛杉矶加州大学 2001-2005，学士，北京大学 邮箱：gluo@pku.edu.cn"
+    },
+    {
+      "id": "pku-1684",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "罗英伟",
+      "title": "教授",
+      "lab": "网络与高能效计算研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1071/1684.htm",
+      "research_areas": [
+        "系统虚拟化",
+        "高效计算系统"
+      ],
+      "recent_publications": [],
+      "summary": "罗英伟 职称：教授 研究所：网络与高能效计算研究所 研究领域：系统虚拟化，高效计算系统 办公电话：86-10-6276 7883 电子邮件：lyw pku.edu.cn 邮箱：lyw@pku.edu.cn"
+    },
+    {
+      "id": "pku-1695",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "马思伟",
+      "title": "教授",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://idm.pku.edu.cn/info/1017/1035.htm",
+      "research_areas": [
+        "视频处理与编码"
+      ],
+      "recent_publications": [],
+      "summary": "马思伟 职称：教授 研究所：视频与视觉技术研究所 研究领域：视频处理与编码 电子邮件：swma pku.edu.cn 邮箱：swma@pku.edu.cn"
+    },
+    {
+      "id": "pku-4600",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "苗旭鹏",
+      "title": "助理教授",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://hsword.github.io/",
+      "research_areas": [
+        "机器学习系统"
+      ],
+      "recent_publications": [
+        {
+          "title": "Proceedings of NSDI Conference 2026",
+          "venue": "School Homepage",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://hsword.github.io/"
+        },
+        {
+          "title": "Proceedings of NSDI Conference 2024",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://hsword.github.io/"
+        },
+        {
+          "title": "Proceedings of ASPLOS Conference 2024",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://hsword.github.io/"
+        },
+        {
+          "title": "@article { miao24spotserve , title = {SpotServe: Serving Generative Large Language Models on Preemptible Instances} , author = {Miao, Xupeng and Shi, Chunan and Duan, Jiangfei and Xi, Xiaoli and Lin, Dahua and Cui, Bin and Jia, Zhihao} , journal = {Proceedings of ASPLOS Conference} , year = {2024} , }",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://hsword.github.io/"
+        }
+      ],
+      "summary": "苗旭鹏 职称：助理教授 研究所：数据科学与工程研究所 研究领域：机器学习系统 电子邮件：xupeng.miao pku.edu.cn 邮箱：xupeng.miao@pku.edu.cn"
+    },
+    {
+      "id": "pku-1630",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "焦文品",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://www.sei.pku.edu.cn/~jwp",
+      "research_areas": [
+        "软件工程方法学",
+        "智能软件",
+        "软件形式化方法"
+      ],
+      "recent_publications": [],
+      "summary": "软件工程方法学、自适应软件、多agent系统、软件形式化方法 科研/教育经历 2000.8-2002.9，博士后，加拿大维多利亚大学 1997.9-2000.7，博士，中国科学院软件研究所 1994.9-1997.7，硕士，华东理工大学 1987.9-1991.7，学士，华东理工大学 邮箱：jwp@sei.pku.edu.cn"
+    },
+    {
+      "id": "pku-1635",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "金鑫",
+      "title": "长聘副教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://xinjin.github.io",
+      "research_areas": [
+        "系统软件",
+        "操作系统",
+        "计算机网络"
+      ],
+      "recent_publications": [],
+      "summary": "金鑫 职称：长聘副教授 研究所：软件研究所 研究领域：系统软件，操作系统，计算机网络 办公电话：86-10-6275 8707 电子邮件：xinjinpku pku.edu.cn 邮箱：xinjinpku@pku.edu.cn"
+    },
+    {
+      "id": "pku-1631",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "金芝",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://需求工程，知识工程",
+      "research_areas": [
+        "需求工程",
+        "知识工程"
+      ],
+      "recent_publications": [],
+      "summary": "金芝 职称：教授 研究所：软件研究所 研究领域：需求工程，知识工程 办公电话：86-10-6276 5977 电子邮件：zhijin sei.pku.edu.cn 邮箱：zhijin@sei.pku.edu.cn"
+    },
+    {
+      "id": "pku-1636",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "孔雨晴",
+      "title": "长聘副教授",
+      "lab": "前沿计算研究中心",
+      "lab_status": "confirmed",
+      "homepage": "https://cfcs.pku.edu.cn/yuqkong/",
+      "research_areas": [
+        "经济和理论计算"
+      ],
+      "recent_publications": [
+        {
+          "title": "Y. Guo, Y. Kong, âRobust Aggregation with Adversarial Expertsâ in Proceedings of the ACM Web conference (WWW), 2025",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        },
+        {
+          "title": "Y. Guo, Y. Kong, J. Liu, âMitigating the Participation Bias by Balancing Extreme Ratingsâ in Proceedings of the ACM Web conference (WWW), 2025, oral presentation",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        },
+        {
+          "title": "Y. Guo, J. D. Hartline, Z. Huang, Y. Kong, A. Shah, F.-Y. Yu, âAlgorithmic Robust Forecast Aggregation,â in Proceedings of the ACM Conference on Economics and Computation (EC), 2025",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        },
+        {
+          "title": "S. Xu, Y. Lu, G. Schoenebeck, Y. Kong, âBenchmarking LLMs' Judgments with No Gold Standardâ in Proceedings of the 13th International Conference on Learning Representations (ICLR), 2025",
+          "venue": "ICLR",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        },
+        {
+          "title": "Q. Wang, X. Xia, Z. Yang, X. Deng, Y. Kong, Z. Zhang, L. Wang, C. Yu, J. Xu, B. Zheng âLearning against Non-credible Second-Price Auctionsâ in Proceedings of the ACM Web conference (WWW), 2025",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        },
+        {
+          "title": "Y. Pan, Z. Chen, Y. Kongâ , âRobust Decision Aggregation with Second-order Informationâ in Proceedings of the ACM Web conference (WWW), 2024",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        },
+        {
+          "title": "Y. Lu, S. Xu, Y. Zhang, Y. Kong, G. Schoenebeck, âEliciting Informative Text Evaluations with Large Language Modelsâ in Proceedings of ACM Conference on Econ and Computation (EC), 2024",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        },
+        {
+          "title": "Y. Kong, S. Wang, Y. Wang, âThe Surprising Benefits of Base Rate Neglect in Robust Aggregationâ in Proceedings of ACM Conference on Econ and Computation (EC), 2024",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        },
+        {
+          "title": "Y. Kong, \"Dominantly Truthful Peer Prediction Mechanisms with a Finite Number of Tasks\" J. ACM 71, 2, Article 9 (April 2024), 49 pages. https://doi.org/10.1145/3638239 Extends the work presented in SODA 2020, ITCS 2022",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://cfcs.pku.edu.cn/yuqkong/"
+        }
+      ],
+      "summary": "孔雨晴 职称：长聘副教授 研究所：前沿计算研究中心 研究领域：经济和理论计算 办公电话：86-10-6276 8209 电子邮件：yuqing.kong pku.edu.cn 邮箱：yuqing.kong@pku.edu.cn"
+    },
+    {
+      "id": "pku-1685",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "李锭",
+      "title": "助理教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://marapapman.github.io",
+      "research_areas": [
+        "程序分析",
+        "系统监控"
+      ],
+      "recent_publications": [
+        {
+          "title": "ACM TheWebConf Conference (WWW), 2026, Senior PC",
+          "venue": "ACM",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://marapapman.github.io"
+        },
+        {
+          "title": "ACM Conference on Computer and Communications Security (CCS), 2026, PC",
+          "venue": "ACM",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://marapapman.github.io"
+        },
+        {
+          "title": "ACM TheWebConf Conference (WWW), 2025, PC",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://marapapman.github.io"
+        },
+        {
+          "title": "ACM Conference on Computer and Communications Security (CCS), 2025, PC",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://marapapman.github.io"
+        },
+        {
+          "title": "IEEE/ACM International Conference on Automated Software Engineering (ASE), 2024, PC",
+          "venue": "IEEE",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://marapapman.github.io"
+        },
+        {
+          "title": "ACM TheWebConf Conference (WWW), 2024, PC",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://marapapman.github.io"
+        }
+      ],
+      "summary": "李锭 职称：助理教授 研究所：软件研究所 研究领域：程序分析，系统监控 电子邮件：ding_li pku.edu.cn 邮箱：ding_li@pku.edu.cn"
+    },
+    {
+      "id": "pku-1679",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "李戈",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://ligechina.github.io",
+      "research_areas": [
+        "程序生成",
+        "程序理解",
+        "深度学习"
+      ],
+      "recent_publications": [
+        {
+          "title": "Proceedings of the 48th IEEE/ACM International Conference on Software Engineering (ICSE 2026), Rio de Janeiro, Brazil, Apr. 12 - 18, 2026.(Accepted) Fang Liu, Ge Li , Qianhui Zhao, Li Zhang",
+          "venue": "IEEE",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 48th IEEE/ACM International Conference on Software Engineering (ICSE 2026), Rio de Janeiro, Brazil, Apr. 12 - 18, 2026. (Accepted) (Cited by 5) Xue Jiang, Yihong Dong, Zhiyuan Fan, Zhi Jin, Wenpin Jiao, Ge Li",
+          "venue": "IEEE",
+          "year": 2026,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics, Vienna, Austria (ACL 2025), Jul. 27 - Aug. 1, 2025. (Cited by 8) Jia Li, Xuyuan Guo, Lei Li, Kechi Zhang, Ge Li , Jia Li, Zhengwei Tao, Fang Liu, Chongyang Tao, Yuqi Zhu, Zhi Jin",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics, Vienna, Austria (ACL 2025), Jul. 27 - Aug. 1, 2025. (Cited by 13) Kaibo Liu, Zhenpeng Chen, Yiyang Liu, Jie Zhang, Mark Harman, Yudong Han, Yun Ma, Yihong Dong, Ge Li , Gang Huang",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025), Vienna, Austria, Jul. 27 - Aug. 1, 2025. (Cited by 6) Kechi Zhang, Ge Li , Jia Li, Yihong Dong, Jia Li, Zhi Jin",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025), Vienna, Austria, Jul. 27 - Aug. 1, 2025. (Cited by 35) Yihong Dong, Yuchen Liu, Xue Jiang, Zhi Jin, Ge Li",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (ACL 2025), Vienna, Austria, Jul. 27 - Aug. 1, 2025. (Cited by 1) Jia Li, Chongyang Tao, Jia Li♂, Ge Li, Zhi Jin, Huangzhao Zhang, Zheng Fang, Fang Liu",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 47th IEEE/ACM International Conference on Software Engineering (ICSE), Ottawa, Ontario, Canada, Apr. 27 - May 3, 2025. (Cited by 17) Kechi Zhang, Jia Li, Zhuo Li, Zhi Jin, Ge Li",
+          "venue": "IEEE",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 47th IEEE/ACM International Conference on Software Engineering (ICSE), Ottawa, Ontario, Canada, Apr. 27 - May 3, 2025. (Cited by 11) Xue Jiang, Yihong Dong, Yongding Tao, Huanyu Liu, Zhi Jin, Ge Li",
+          "venue": "IEEE",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 40th IEEE/ACM International Conference on Automated Software Engineering (ASE 2025), Seoul, South Korea, Nov. 16 - 20, 2025. arXiv: 2503.15301 (Cited by 12) Kechi Zhang, Ge Li , Yihong Dong, Jingjing Xu, Jun Zhang, Jing Su, Yongfei Liu, Zhi Jin",
+          "venue": "IEEE",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "ACM Transactions on Software Engineering and Methodology (TOSEM), Vol. 34, Iss. 2, Jan. 2025, pp.1-23. (Cited by 299) Yihong Dong, Jiazheng Ding, Xue Jiang, Ge Li , Zhuo Li, Zhi Jin",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "ACM Transactions on Software Engineering and Methodology (TOSEM), 2025.(Accepted) Ziliang Wang, Ge Li , Jia Li, Jia Li, Meng Yan, Yingfei Xiong, Zhi Jin",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "ACM Transactions on Software Engineering and Methodology (TOSEM), 2025.(Accepted) (Cited by 2) Kechi Zhang, Ge Li , Jia Li, Huangzhao Zhang, Yihong Dong, Jingjing Xu, Zhi Jin",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "ACM Transactions on Software Engineering and Methodology (TOSEM), 2025. (Cited by 11) Jia Li, Ge Li , Yongmin Li, Jin Zhi",
+          "venue": "ACM",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024), Bangkok, Thailand, Aug. 11-16, 2024. (Cited by 54) Yihong Dong, Kangcheng Luo, Xue Jiang, Zhi Jin, Ge Li",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024), Bangkok, Thailand, Aug. 11-16, 2024. (Cited by 31) Bolun Li, Zhihong Sun, Tao Huang, Hongyu Zhang, Yao Wan, Ge Li , Zhi Jin, Chen Lyu",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024), Bangkok, Thailand, Aug. 11-16, 2024. (Cited by 228) Yihong Dong, Xue Jiang, Huanyu Liu, Zhi Jin, Ge Li",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (ACL 2024), Bangkok, Thailand, Aug. 11-16, 2024. (Cited by 15) Kechi Zhang, Jia Li, Ge Li , Xianjie Shi, Zhi Jin",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering (ASE 2024), Sacramento, California, United States, Oct. 27 - Nov. 1, 2024, pp.1258 - 1268. Jia Li, Ge Li , Xuanming Zhang, Yunfei Zhao, Yihong Dong, Zhi Jin, Binhua Li, Fei Huang, Yongbin Li",
+          "venue": "IEEE",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 39th Annual Conference on Neural Information Processing Systems (NeurIPS 20245), San Diego, USA, Dec. 2 - 7, 2025. arXiv:2507.15343 Yihong Dong, Ge Li , Xue Jiang, Yongding Tao, Kechi Zhang, Hao Zhu, Huanyu Liu, Jiazheng Ding, Jia Li, Jinliang Deng, Hong Mei",
+          "venue": "NEURIPS",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 39th Annual Conference on Neural Information Processing Systems (NeurIPS 20245), San Diego, USA, Dec. 2 - 7, 2025. arXiv: 2505.16368 (Cited by 4) Jia Li, Hao Zhu, Huanyu Liu, Xianjie Shi, He Zong, Yihong Dong, Kechi Zhang, Siyuan Jiang, Zhi Jin, Ge Li",
+          "venue": "NEURIPS",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 39th Annual Conference on Neural Information Processing Systems (NeurIPS 20245), San Diego, USA, Dec. 2 - 7, 2025. arXiv: 2410.02675 (Cited by 40) Huanyu Liu, Jia Li, Hao Zhu, Kechi Zhang, Yihong Dong, Ge Li",
+          "venue": "NEURIPS",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 38th Annual Conference on Neural Information Processing Systems (NeurIPS 2024)",
+          "venue": "NEURIPS",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 2024 ACM International Conference on the Foundations of Software Engineering (FSE), Porto de Galinhas, Brazil, July 15-19, 2024. (Cited by 22) Zhen Yang, Fang Liu, Zhongxing Yu, Jacy Wai Keung, Jia Li, Shuo Liu, Yifan Hong, Xiaoxue Ma, Zhi Jin, Ge Li",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Proceedings of the 2024 ACM International Conference on the Foundations of Software Engineering (FSE), Porto de Galinhas, Brazil, July 15-19, 2024. (Cited by 142) Xin-Cheng Wen, Cuiyun Gao, Feng Luo, Haoyu Wang, Ge Li , and Qing Liao",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "Journal of Software: Evolution and Process, Vol. 36, No. 9, Sep 01, 2024. doi: 10.1002/smr.2669. pp 1-23. (Cited by 1) Kechi Zhang, Ge Li , Huangzhao Zhang, Zhi Jin",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "ACM Transactions on Software Engineering and Methodology (TOSEM), Vol. 33, No. 8, Article 204, Nov. 2024. (Cited by 58) Yihong Dong, Xue Jiang, Zhi Jin, Ge Li",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "ACM Transactions on Software Engineering and Methodology (TOSEM), Vol. 33, No. 7, Article 189, Sep. 2024. (Cited by 463) Xue Jiang, Yihong Dong, Lecheng Wang, Zheng Fang, Qiwei Shang, Ge Li , Zhi Jin, Wenpin Jiao",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "ACM Transactions on Software Engineering and Methodology (TOSEM), Vol. 33, No. 7, Article 182, Sep. 2024. (Cited by 326) Huangzhao Zhang, Zhuo Li, Zhi Jin, Ge Li",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        },
+        {
+          "title": "ACM Transactions on Software Engineering and Methodology (TOSEM), Vol. 33, No. 7, Article 182, Sep. 2024. (Cited by 118) Zejun Wang, Kaibo Liu, Ge Li , Zhi Jin",
+          "venue": "ACM",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://ligechina.github.io"
+        }
+      ],
+      "summary": "李戈 职称：教授 研究所：软件研究所 研究领域：程序生成，程序理解，深度学习 办公电话：86-10-62751794-11 电子邮件：lige pku.edu.cn 邮箱：lige@pku.edu.cn"
+    },
+    {
+      "id": "pku-3089",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "李胜",
+      "title": "研究员",
+      "lab": "元宇宙技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://www.graphics.pku.edu.cn/members/lisheng/index.htm",
+      "research_areas": [
+        "计算机图形图像",
+        "虚拟",
+        "增强现实技术",
+        "实时真实感渲染",
+        "虚拟仿真技术"
+      ],
+      "recent_publications": [],
+      "summary": "李胜 职称：研究员 研究所：元宇宙技术研究所 研究领域：计算机图形图像、虚拟/增强现实技术、实时真实感渲染、虚拟仿真技术 办公电话：86-10-62755392 电子邮件：lisheng pku.edu.cn 邮箱：lisheng@pku.edu.cn"
+    },
+    {
+      "id": "pku-1680",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "李素建",
+      "title": "长聘副教授",
+      "lab": "计算语言学研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://www.icl.pku.edu.cn/members/lisujian/default.htm",
+      "research_areas": [
+        "自然语言处理",
+        "自动文摘",
+        "篇章分析"
+      ],
+      "recent_publications": [],
+      "summary": "李素建 职称：长聘副教授 研究所：计算语言学研究所 研究领域：自然语言处理、自动文摘、篇章分析 办公电话：86-10-62753081 电子邮件：lisujian pku.edu.cn 邮箱：lisujian@pku.edu.cn"
+    },
+    {
+      "id": "pku-1687",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "李彤阳",
+      "title": "助理教授",
+      "lab": "前沿计算研究中心",
+      "lab_status": "confirmed",
+      "homepage": "https://www.tongyangli.com/",
+      "research_areas": [
+        "量子算法设计（特别是量子机器学习",
+        "量子优化算法）",
+        "量子复杂性理论",
+        "量子模拟",
+        "量子游走"
+      ],
+      "recent_publications": [
+        {
+          "title": "11/2025, my paper \"Fast-forwardable Lindbladians imply quantum phase estimation\" was accepted as a contributed talk at the 29th Annual Quantum Information Processing Conference (QIP 2026)",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "11/2025, my paper \" DC-MBQC: A Distributed Quantum Compilation Framework for Measurement-Based Quantum Computing \" was accepted by the 32nd IEEE International Symposium on High Performance Computer Architecture (HPCA 2026)",
+          "venue": "IEEE",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "09/2025, my papers \"Near-Optimal Quantum Algorithms for Computing (Coarse) Correlated Equilibria of General-Sum Games\" and \"QCircuitBench: A Large-Scale Dataset for Benchmarking Quantum Algorithm Design\" were accepted by the 39th Annual Conference on Neural Information Processing Systems (NeurIPS 2025)",
+          "venue": "NEURIPS",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "08/2025, I served as a co-PC chair of the 25th Asian Quantum Information Science Conference (AQIS 2025)",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "01/2025, my paper \"Robustness of Quantum Algorithms for Nonconvex Optimization\" was accepted by the 1 3 th International Conference on Learning Representations (ICLR 202 5 )",
+          "venue": "ICLR",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "05/2024, my papers \"Provably Efficient Exploration in Quantum Reinforcement Learning with Logarithmic Worst-Case Regret\" and \" Quantum Algorithms and Lower Bounds for Finite-Sum Optimization \" were accepted by the 41st International Conference on Machine Learning (ICML 2024)",
+          "venue": "ICML",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "04/2024, my papers \"Quantum Non-Identical Mean Estimation: Efficient Algorithms and Fundamental Limits\" and \"Efficient Optimal Control of Open Quantum Systems\" w e re accepted by the 19th Conference on the Theory of Quantum Computation, Communication and Cryptography (TQC 2024)",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "04/2024, my paper \"A Quantum Algorithm Framework for Discrete Probability Distributions with Applications to Rényi Entropy Estimation“ was accepted by the IEEE Transactions on Information Theory",
+          "venue": "IEEE",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "03/2024, my paper \" SpacePulse: Combining Parameterized Pulses and Contextual Subspace for More Practical VQE \" was accepted by the 61st Design Automation Conference (DAC 2024)",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        },
+        {
+          "title": "01/2024, my paper \"Near-Optimal Quantum Algorithm for Minimizing the Maximal Loss\" was accepted by the 12th International Conference on Learning Representations (ICLR 2024)",
+          "venue": "ICLR",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://www.tongyangli.com/"
+        }
+      ],
+      "summary": "李彤阳 职称：助理教授 研究所：前沿计算研究中心 研究领域：量子算法设计（特别是量子机器学习、量子优化算法）、量子复杂性理论、量子模拟、量子游走 办公电话：86 (0)10 6276-6141 电子邮件：tongyangli pku.edu.cn 邮箱：tongyangli@pku.edu.cn"
+    },
+    {
+      "id": "pku-1677",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "李文新",
+      "title": "教授",
+      "lab": "网络与高能效计算研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1071/1677.htm",
+      "research_areas": [
+        "人工智能",
+        "图形识别"
+      ],
+      "recent_publications": [],
+      "summary": "李文新 职称：教授 研究所：网络与高能效计算研究所 研究领域：人工智能，图形识别 办公电话：86-10-6275 3425 电子邮件：lwx pku.edu.cn 邮箱：lwx@pku.edu.cn"
+    },
+    {
+      "id": "pku-1688",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "刘锋",
+      "title": "副教授",
+      "lab": "系统结构研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1071/1688.htm",
+      "research_areas": [
+        "计算机体系结构"
+      ],
+      "recent_publications": [],
+      "summary": "刘锋 职称：副教授 研究所：系统结构研究所 研究领域：计算机体系结构 办公电话：86-10-62765828－841 电子邮件：liufeng mprc.pku.edu.cn 邮箱：liufeng@mprc.pku.edu.cn"
+    },
+    {
+      "id": "pku-2873",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "刘古月",
+      "title": "助理教授",
+      "lab": "网络与高能效计算研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://grace-liu.github.io/",
+      "research_areas": [
+        "计算机网络",
+        "分布式系统"
+      ],
+      "recent_publications": [
+        {
+          "title": "April-2025: Our paper InfiniteHBD on High-Bandwidth Domain design for LLM training will appear at SIGCOMM 2025",
+          "venue": "SIGCOMM",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://grace-liu.github.io/"
+        },
+        {
+          "title": "April-2025: Our paper DNSLogzip on fast and high-ratio compression for DNS logs will appear at SIGCOMM 2025",
+          "venue": "SIGCOMM",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://grace-liu.github.io/"
+        },
+        {
+          "title": "May-2024: Our two papers, ConfMask on protecting configuration privacy and PPT on new transport mechanism, will appear at SIGCOMM 2024",
+          "venue": "SIGCOMM",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://grace-liu.github.io/"
+        },
+        {
+          "title": "June-2024: Invited to co-chair SIGCOMM 2024 artifact evaluation committee",
+          "venue": "SIGCOMM",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://grace-liu.github.io/"
+        },
+        {
+          "title": "Dec-2024: Invited to serve as the PC for SIGCOMM 2025 , CoNext 2025 , and NSDI 2026 , please submit your great work",
+          "venue": "SIGCOMM",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://grace-liu.github.io/"
+        }
+      ],
+      "summary": "刘古月 职称：助理教授 研究所：网络与高能效计算研究所 研究领域：计算机网络,分布式系统 电子邮件：guyue pku.edu.cn 邮箱：guyue@pku.edu.cn"
+    },
+    {
+      "id": "pku-1622",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "管雪涛",
+      "title": "副研究员",
+      "lab": "系统结构研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1066/1622.htm",
+      "research_areas": [
+        "计算机体系结构"
+      ],
+      "recent_publications": [],
+      "summary": "管雪涛 职称：副研究员 研究所：系统结构研究所 研究领域：计算机体系结构 办公电话：86-10-62765828-806 电子邮件：gxt pku.edu.cn 邮箱：gxt@pku.edu.cn"
+    },
+    {
+      "id": "pku-1620",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "郭耀",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://sei.pku.edu.cn/~yaoguo",
+      "research_areas": [
+        "操作系统",
+        "移动计算",
+        "软件安全"
+      ],
+      "recent_publications": [],
+      "summary": "操作系统：新型操作系统的设计、操作系统性能优化、机器人操作系统等； 移动计算：移动计算系统与应用的分析与优化，包括性能分析与优化、能耗分析与优化、隐私分析与保护等； 软件安全：操作系统和移动应用等的安全分析与防护，包括可信计算技术、细粒度访问控制、旁路(side-channel)攻击与防护等。 科研/教育经历 2003-2007，博士，美国麻省大学 1997-2000，硕士，北京大学 1992-1997，学士，北京大学 邮箱：yaoguo@pku.edu.cn"
+    },
+    {
+      "id": "pku-1626",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "郝丹",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://sei.pku.edu.cn/~haod",
+      "research_areas": [
+        "软件测试"
+      ],
+      "recent_publications": [],
+      "summary": "郝丹 职称：教授 研究所：软件研究所 研究领域：软件测试 办公电话：86-10-62757008 电子邮件：haod sei.pku.edu.cn 邮箱：haod@sei.pku.edu.cn"
+    },
+    {
+      "id": "pku-1627",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "胡建斌",
+      "title": "副教授",
+      "lab": "元宇宙技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1067/1627.htm",
+      "research_areas": [
+        "计算机安全"
+      ],
+      "recent_publications": [],
+      "summary": "胡建斌 职称：副教授 研究所：元宇宙技术研究所 研究领域：计算机安全 办公电话：86-10-62765809 电子邮件：hujianbin pku.edu.cn 邮箱：hujianbin@pku.edu.cn"
+    },
+    {
+      "id": "pku-1628",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "胡俊峰",
+      "title": "副教授",
+      "lab": "计算语言学研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1067/1628.htm",
+      "research_areas": [
+        "人工智能",
+        "自然语言处理"
+      ],
+      "recent_publications": [],
+      "summary": "胡俊峰 职称：副教授 研究所：计算语言学研究所 研究领域：人工智能、自然语言处理 办公电话：86-10-62765835-103 电子邮件：hujf pku.edu.cn 邮箱：hujf@pku.edu.cn"
+    },
+    {
+      "id": "pku-1623",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "胡振江",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://sei.pku.edu.cn/~hu",
+      "research_areas": [
+        "程序设计语言",
+        "函数式语言",
+        "程序演算",
+        "软件工程"
+      ],
+      "recent_publications": [],
+      "summary": "胡振江 职称：教授 研究所：软件研究所 研究领域：程序设计语言，函数式语言，程序演算，软件工程 办公电话：86-10-62757974 电子邮件：huzj pku.edu.cn 邮箱：huzj@pku.edu.cn"
+    },
+    {
+      "id": "pku-1624",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "黄罡",
+      "title": "教授",
+      "lab": "软件研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://sei.pku.edu.cn/~huanggang",
+      "research_areas": [
+        "系统软件与自适应"
+      ],
+      "recent_publications": [],
+      "summary": "系统软件与自适应 科研/教育经历 2000-2003，博士，北京大学 1997-2000，硕士，西北工业大学 1993-1997，学士，西北工业大学 邮箱：hg@pku.edu.cn"
+    },
+    {
+      "id": "pku-1629",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "黄群",
+      "title": "助理教授",
+      "lab": "网络与高能效计算研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1067/1629.htm",
+      "research_areas": [
+        "计算机网络",
+        "分布式系统"
+      ],
+      "recent_publications": [],
+      "summary": "黄群 职称：助理教授 研究所：网络与高能效计算研究所 研究领域：计算机网络、分布式系统 办公电话：86-10-62756342 电子邮件：huangqun pku.edu.cn 邮箱：huangqun@pku.edu.cn"
+    },
+    {
+      "id": "pku-1625",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "黄铁军",
+      "title": "教授",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1067/1625.htm",
+      "research_areas": [
+        "图像识别与视频编码"
+      ],
+      "recent_publications": [],
+      "summary": "黄铁军 职称：教授 研究所：视频与视觉技术研究所 研究领域：图像识别与视频编码 办公电话：86-10-6275 6541 电子邮件：tjhuang pku.edu.cn 邮箱：tjhuang@pku.edu.cn"
+    },
+    {
+      "id": "pku-1632",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "贾惠柱",
+      "title": "副研究员",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://教育背景",
+      "research_areas": [
+        "媒体计算",
+        "多媒体SoC芯片设计",
+        "视频大数据处理系统"
+      ],
+      "recent_publications": [],
+      "summary": "贾惠柱 职称：副研究员 研究所：视频与视觉技术研究所 研究领域：媒体计算、多媒体SoC芯片设计、视频大数据处理系统 办公电话：86-10-58876151 电子邮件：hzjia pku.edu.cn 邮箱：hzjia@pku.edu.cn"
+    },
+    {
+      "id": "pku-1633",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "姜少峰",
+      "title": "助理教授",
+      "lab": "前沿计算研究中心",
+      "lab_status": "confirmed",
+      "homepage": "https://shaofengjiang.cn",
+      "research_areas": [
+        "理论计算机科学",
+        "大数据上的算法",
+        "近似算法",
+        "在线算法"
+      ],
+      "recent_publications": [
+        {
+          "title": "Relative Error Fair Clustering in the Weak-Strong Oracle Model . Vladimir Braverman, Prathamesh Dharangutte, Shaofeng H.-C. Jiang, Hoai-An Nguyen, Chen Wang, Yubo Zhang, Samson Zhou. ICML 2025",
+          "venue": "ICML",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://shaofengjiang.cn"
+        },
+        {
+          "title": "Online Clustering with Nearly Optimal Consistency . T-H. Hubert Chan, Shaofeng H.-C. Jiang, Tianyi Wu, Mengshi Zhao. ICLR 2025",
+          "venue": "ICLR",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://shaofengjiang.cn"
+        },
+        {
+          "title": "Fully Dynamic Algorithms for Chamfer Distance . Gramoz Goranci, Shaofeng H.-C. Jiang, Peter Kiss, Eva Szilagyi, Qiaoyuan Yang. NeurIPS 2025",
+          "venue": "NEURIPS",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://shaofengjiang.cn"
+        },
+        {
+          "title": "Faster Approximation Algorithms for k-Center via Data Reduction . Arnold Filtser, Shaofeng H.-C. Jiang, Yi Li, Anurag Murty Naredla, Ioannis Psarros, Qiaoyuan Yang, Qin Zhang. ICML 2025",
+          "venue": "ICML",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://shaofengjiang.cn"
+        },
+        {
+          "title": "Fair Clustering in the Sliding Window Model . Vincent Cohen-Addad, Shaofeng H.-C. Jiang, Qiaoyuan Yang, Yubo Zhang, Samson Zhou. ICLR 2025 (spotlight, 5.1% acceptance rate)",
+          "venue": "ICLR",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://shaofengjiang.cn"
+        },
+        {
+          "title": "Dynamic Facility Location in High Dimensional Euclidean Spaces . Sayan Bhattacharya, Gramoz Goranci, Shaofeng H.-C. Jiang, Yi Qian, Yubo Zhang. ICML 2024 (spotlight, 3.5% acceptance rate)",
+          "venue": "ICML",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://shaofengjiang.cn"
+        }
+      ],
+      "summary": "姜少峰 职称：助理教授 研究所：前沿计算研究中心 研究领域：理论计算机科学，大数据上的算法，近似算法，在线算法 办公电话：+86 (0)10 6275-0349 电子邮件：shaofeng.jiang pku.edu.cn 邮箱：shaofeng.jiang@pku.edu.cn"
+    },
+    {
+      "id": "pku-1634",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "蒋婷婷",
+      "title": "副教授",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://www.idm.pku.edu.cn/staff/jiangtingting/",
+      "research_areas": [
+        "计算机视觉",
+        "图像视频处理"
+      ],
+      "recent_publications": [],
+      "summary": "蒋婷婷 职称：副教授 研究所：视频与视觉技术研究所 研究领域：计算机视觉、图像视频处理 办公电话：86-10-62753424 电子邮件：ttjiang pku.edu.cn 邮箱：ttjiang@pku.edu.cn"
+    },
+    {
+      "id": "pku-1606",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈一峯",
+      "title": "研究员",
+      "lab": "元宇宙技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1062/1606.htm",
+      "research_areas": [
+        "并行编程语言",
+        "异构并行软件",
+        "形式化方法"
+      ],
+      "recent_publications": [],
+      "summary": "陈一峯 职称：研究员 研究所：元宇宙技术研究所 研究领域：并行编程语言，异构并行软件，形式化方法 办公电话：86-10-6276 5818 电子邮件：cyf pku.edu.cn 邮箱：cyf@pku.edu.cn"
+    },
+    {
+      "id": "pku-1613",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈毅松",
+      "title": "副教授",
+      "lab": "元宇宙技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://www.graphics.pku.edu.cn/members/chenyisong/",
+      "research_areas": [
+        "计算机视觉"
+      ],
+      "recent_publications": [],
+      "summary": "陈毅松 职称：副教授 研究所：元宇宙技术研究所 研究领域：计算机视觉 办公电话：86-10-62765819-801 电子邮件：chenys graphics.pku.edu.cn 邮箱：chenys@graphics.pku.edu.cn"
+    },
+    {
+      "id": "pku-1605",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "陈钟",
+      "title": "教授",
+      "lab": "元宇宙技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://特定领域软件工程，网络与信息安全，系统软件",
+      "research_areas": [
+        "特定领域软件工程",
+        "网络与信息安全",
+        "系统软件"
+      ],
+      "recent_publications": [],
+      "summary": "陈钟 职称：教授 研究所：元宇宙技术研究所 研究领域：特定领域软件工程，网络与信息安全，系统软件 办公电话：86-10-6276 5808 电子邮件：chz pku.edu.cn 邮箱：chz@pku.edu.cn"
+    },
+    {
+      "id": "pku-1614",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "程宽",
+      "title": "助理教授",
+      "lab": "前沿计算研究中心",
+      "lab_status": "confirmed",
+      "homepage": "https://sites.google.com/site/ckkcdh/home",
+      "research_areas": [
+        "计算模型与复杂性",
+        "伪随机与编码",
+        "机器学习",
+        "网络协议"
+      ],
+      "recent_publications": [],
+      "summary": "程宽 职称：助理教授 研究所：前沿计算研究中心 研究领域：计算模型与复杂性，伪随机与编码，机器学习，网络协议 电子邮件：ckkcdh pku.edu.cn 邮箱：ckkcdh@pku.edu.cn"
+    },
+    {
+      "id": "pku-1607",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "程旭",
+      "title": "教授",
+      "lab": "系统结构研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://计算机系统结构",
+      "research_areas": [
+        "计算机系统结构"
+      ],
+      "recent_publications": [],
+      "summary": "程旭 职称：教授 研究所：系统结构研究所 研究领域：计算机系统结构 办公电话：86-10-6275 6231 电子邮件：chengxu mprc.pku.edu.cn 邮箱：chengxu@mprc.pku.edu.cn"
+    },
+    {
+      "id": "pku-3351",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "初旭",
+      "title": "助理研究员",
+      "lab": "前沿计算研究中心",
+      "lab_status": "confirmed",
+      "homepage": "http://chuxu.online/",
+      "research_areas": [
+        "机器学习",
+        "数据挖掘"
+      ],
+      "recent_publications": [],
+      "summary": "初旭 职称：助理研究员 研究所：前沿计算研究中心 研究领域：机器学习、数据挖掘 电子邮件：chu_xu pku.edu.cn 邮箱：chu_xu@pku.edu.cn"
+    },
+    {
+      "id": "pku-1608",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "崔斌",
+      "title": "教授",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cuibinpku.github.io/",
+      "research_areas": [
+        "AI系统",
+        "数据库",
+        "大数据"
+      ],
+      "recent_publications": [],
+      "summary": "AI系统、大模型训练推理、AI应用、数据库系统、大数据管理和分析等 邮箱：bin.cui@pku.edu.cn"
+    },
+    {
+      "id": "pku-1616",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "邓小铁",
+      "title": "教授",
+      "lab": "前沿计算研究中心",
+      "lab_status": "confirmed",
+      "homepage": "https://邓小铁，1982年于清华大学获得学士学位，1984年于中国科学院获得硕士学位，1989年于斯坦福大学获得博士学位。1984-1985年，任中国科学院系统科学研究所助理研究员；1991-1999年任加拿大约克大学计算机科学与工程系助理教授、副教授；1997-2012年任香港城市大学计算机科学与工程系副教授、教授、讲席教授，同时，于2010年-2012年兼任英国利物浦大学计算机科学与工程系讲席教授；2012-2017年任上海交通大学计算机科学与工程系讲席教授；2017年12月入职北京大学，任计算机学院前沿计算研究中心讲席教授。",
+      "research_areas": [
+        "大数据算法",
+        "算法博弈论",
+        "互联网经济学",
+        "在线算法"
+      ],
+      "recent_publications": [],
+      "summary": "邓小铁 职称：教授 研究所：前沿计算研究中心 研究领域：大数据算法、算法博弈论、互联网经济学、在线算法 办公电话：86-10-6276 9219 电子邮件：xiaotie pku.edu.cn 邮箱：xiaotie@pku.edu.cn"
+    },
+    {
+      "id": "pku-1618",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "董豪",
+      "title": "长聘副教授",
+      "lab": "前沿计算研究中心",
+      "lab_status": "confirmed",
+      "homepage": "http://zsdonghao.github.io",
+      "research_areas": [
+        "具身智能",
+        "智能机器人",
+        "计算机视觉"
+      ],
+      "recent_publications": [
+        {
+          "title": "NEW Seven papers get accepted to CVPR 2026",
+          "venue": "CVPR",
+          "year": 2026,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "VAT-Mart is selected as the Youth Outstanding Paper Award Shortlist @ World Artificial Intelligence Conference 2025",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "UniGarmentManip is awarded by the China Embodied AI Conference the Outstanding Young Researcher Paper nomination award",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "Three papers have been accepted to NeurIPS 2025, with two selected as Spotlight (688 over 21575 valid submissions)",
+          "venue": "NEURIPS",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "Three papers get accepted to ICLR 2025",
+          "venue": "ICLR",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "One paper gets accepted to ICML 2025",
+          "venue": "ICML",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "I will serve as an Area Chair for CVPR 2026 and an Associate Editor for ICRA 2026",
+          "venue": "CVPR",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "Five CVPR submissions all get accepted",
+          "venue": "CVPR",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "CheckManual and OmniManip have been selected as CVPR highlights",
+          "venue": "CVPR",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "Two papers get accepted to NeurIPS 2024",
+          "venue": "NEURIPS",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "Two papers get accepted to ICLR 2024: SparseDFF and PerSAM",
+          "venue": "ICLR",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "Three papers get accepted to CVPR 2024",
+          "venue": "CVPR",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "Call for Papers: Special Issues on Embodied AI in Journal of Field Robotics",
+          "venue": "School Homepage",
+          "year": 2024,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        },
+        {
+          "title": "CVPR 2024 Embodied AI Workshop PRS Challenge: Human-centered In-building Embodied Delivery",
+          "venue": "CVPR",
+          "year": 2024,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "http://zsdonghao.github.io"
+        }
+      ],
+      "summary": "董豪 职称：长聘副教授 研究所：前沿计算研究中心 研究领域：具身智能、智能机器人、计算机视觉 办公电话：86-10-6275 6561 电子邮件：hao.dong pku.edu.cn 邮箱：hao.dong@pku.edu.cn"
+    },
+    {
+      "id": "pku-1617",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "段凌宇",
+      "title": "教授",
+      "lab": "视频与视觉技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://图像识别与多媒体大数据分析，计算机应用技术",
+      "research_areas": [
+        "图像识别与多媒体大数据分析",
+        "计算机应用技术"
+      ],
+      "recent_publications": [],
+      "summary": "段凌宇 职称：教授 研究所：视频与视觉技术研究所 研究领域：图像识别与多媒体大数据分析，计算机应用技术 办公电话：86-10-6275 8602-172 电子邮件：lingyu pku.edu.cn 邮箱：lingyu@pku.edu.cn"
+    },
+    {
+      "id": "pku-3084",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "盖孟",
+      "title": "副研究员",
+      "lab": "元宇宙技术研究所",
+      "lab_status": "confirmed",
+      "homepage": "http://www.graphics.pku.edu.cn/members/gaimeng",
+      "research_areas": [
+        "计算机图形学",
+        "实时渲染",
+        "虚拟现实",
+        "视景仿真"
+      ],
+      "recent_publications": [],
+      "summary": "盖孟 职称：副研究员 研究所：元宇宙技术研究所 研究领域：计算机图形学、实时渲染、虚拟现实、视景仿真 办公电话：86-10-62765819 电子邮件：gaimeng pku.edu.cn 邮箱：gaimeng@pku.edu.cn"
+    },
+    {
+      "id": "pku-1619",
+      "school_id": "pku",
+      "school": "北京大学",
+      "faculty": "计算机学院",
+      "name": "高军",
+      "title": "教授",
+      "lab": "数据科学与工程研究所",
+      "lab_status": "confirmed",
+      "homepage": "https://cs.pku.edu.cn/info/1066/1619.htm",
+      "research_areas": [
+        "图数据分析和学习",
+        "AI+DB"
+      ],
+      "recent_publications": [
+        {
+          "title": "éæ(24)ï¼åå£«çï¼å­¦ä¹ åç»åä¼å, æ°æ®Agent. ICML 2025",
+          "venue": "ICML",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://cs.pku.edu.cn/info/1066/1619.htm"
+        },
+        {
+          "title": "Jun Gao. DeepNM: Incremental Graph Matching Based on Sinkhorn Similarity. TKDE 2025 Ji Deng, Zhao Li, Ji Zhang, Jun Gao. EGPlace: An Efficient Macro Placement Method via Evolutionary Search with Greedy Repositioning Guided Mutation. In Proc of ICML 2025 Jiazun Chen",
+          "venue": "ICML",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cs.pku.edu.cn/info/1066/1619.htm"
+        },
+        {
+          "title": "Jun Gao. DeepNM: Incremental Graph Matching Based on Sinkhorn Similarity. TKDE 2025",
+          "venue": "School Homepage",
+          "year": 2025,
+          "kind": "journal",
+          "source": "School Homepage",
+          "link": "https://cs.pku.edu.cn/info/1066/1619.htm"
+        },
+        {
+          "title": "Ji Deng, Zhao Li, Ji Zhang, Jun Gao. EGPlace: An Efficient Macro Placement Method via Evolutionary Search with Greedy Repositioning Guided Mutation. In Proc of ICML 2025",
+          "venue": "ICML",
+          "year": 2025,
+          "kind": "conference",
+          "source": "School Homepage",
+          "link": "https://cs.pku.edu.cn/info/1066/1619.htm"
+        }
+      ],
+      "summary": "高军 职称：教授 研究所：数据科学与工程研究所 研究领域：图数据分析和学习、AI+DB 办公电话：86-10-6275 5825 电子邮件：gaojun pku.edu.cn 邮箱：gaojun@pku.edu.cn"
+    }
+  ]
+}

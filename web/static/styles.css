@@ -206,6 +206,45 @@ button {
   margin-bottom: 28px;
 }
 
+.classification-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.class-card {
+  padding: 14px;
+  border-radius: 18px;
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+}
+
+.class-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.class-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(16, 33, 27, 0.04);
+}
+
+.class-item span {
+  color: var(--ink-soft);
+  font-size: 0.86rem;
+}
+
+.class-item strong {
+  font-family: "Noto Serif SC", "Source Han Serif SC", serif;
+}
+
 .school-overview,
 .area-cloud {
   display: grid;
@@ -698,7 +737,8 @@ button {
 @media (max-width: 1080px) {
   .hero,
   .layout,
-  .overview-strip {
+  .overview-strip,
+  .classification-strip {
     grid-template-columns: 1fr;
   }
 
